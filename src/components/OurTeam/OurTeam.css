@@ -1,0 +1,182 @@
+.bg {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("https://i.ibb.co/KwfDbfn/White-Photo-Simple-Good-Menu-Facebook-Ads-2.png")
+    no-repeat center;
+  background-size: cover;
+  height: 100%;
+}
+
+.bg-a {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url("https://themegenix.net/html/bemet/assets/img/images/faq_shape02.png")
+    no-repeat center;
+  background-size: auto;
+  position: relative;
+  background-position: bottom right;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.left-section {
+  flex: 1;
+}
+
+.left-section h2 {
+  font-size: 24px;
+  margin: 0;
+  font-family: cursive;
+}
+
+.left-section h1 {
+  font-size: 40px;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.left-section h1 span {
+  color: #fff; /* Highlight color */
+}
+
+.left-section p {
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.left-section button {
+  background-color: #000;
+  margin-top: 10px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 900;
+  border-radius: 100px;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+
+.team-card {
+  padding: 2px;
+  width: 280px;
+  text-align: center;
+  border-radius: 7px;
+}
+
+/* .team-card img {
+  width: 120p;
+  height: auto;
+} */
+
+.team-card h3 {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.team-card p {
+  margin: 0;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container::before,
+  .container::after {
+    left: 0;
+    right: 0;
+    height: 50%;
+    width: 100%;
+  }
+
+  .container::before {
+    bottom: 50%;
+  }
+
+  .container::after {
+    top: 50%;
+  }
+
+  .left-section,
+  .right-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .left-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card {
+    margin-bottom: 20px;
+  }
+
+  /* .team-card img {
+    width: 100px;
+    height: 100px;
+  } */
+}
+
+@media (max-width: 480px) {
+  .left-section h1 {
+    font-size: 32px;
+  }
+
+  .left-section p {
+    font-size: 16px;
+  }
+
+  .left-section button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .team-card h3 {
+    font-size: 16px;
+  }
+
+  .team-card p {
+    font-size: 14px;
+  }
+}

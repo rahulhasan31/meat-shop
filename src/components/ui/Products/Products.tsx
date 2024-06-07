@@ -22,8 +22,8 @@ const Products = () => {
               </h1>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 p-4 lg:p-10">
-            <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 p-4 lg:p-10 max-sm:gap-8">
+            <div className="relative  ">
               <div className="absolute inset-x-0 top-7 flex justify-center z-10 max-sm:top-2 max-sm:">
                 <img
                   src="https://i.ibb.co/99GtLN0/product-img03.png"
@@ -35,7 +35,7 @@ const Products = () => {
                 style={{
                   backgroundColor: "#f1ece3",
                 }}
-                className="rounded-lg shadow-md overflow-hidden p-6 text-center h-96 relative box  rounded-b-lg max-sm:h-96">
+                className="rounded-lg shadow-md overflow-hidden p-6 text-center h-96 relative box  rounded-b-lg max-sm:h-96 ">
                 <div className="lg:mt-16 relative lg:top-24 max-sm:top-20 max-sm:mt-16">
                   <div className="flex relative -top-44  items-center  max-sm:-top-40 ">
                     <h1 className="font-bold me-2">NEW</h1>

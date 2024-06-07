@@ -105,7 +105,7 @@ const NavbarPage = () => {
                     : "foreground"
                 }
                 className="w-full"
-                href="#"
+                href="/"
                 size="lg">
                 {item}
               </Link>

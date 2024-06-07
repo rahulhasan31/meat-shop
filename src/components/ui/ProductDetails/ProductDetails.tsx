@@ -180,25 +180,23 @@ const ProductDetails = () => {
               </p>
             </div>
             <div className="mt-8">
-              <h1 className=" font-semibold text-md mb-8">QUANTITY :</h1>
-              <div className="flex justify-between">
-                <div className="flex lg:w-44   ">
-                  <button className="font-bold text-lg border py-3 px-5 ">
-                    <FiPlusCircle className="text-red-600 " />
+              <h1 className="font-semibold text-md mb-8">QUANTITY :</h1>
+              <div className="flex flex-col lg:flex-row justify-between max-sm:w-full lg:w-auto">
+                <div className="flex w-full lg:w-44 mb-4 lg:mb-0">
+                  <button className="font-bold text-lg border py-3 px-5 flex-1">
+                    <FiPlusCircle className="text-red-600" />
                   </button>
-                  <p className="font-bold border py-3 px-5">1</p>
-                  <button className="font-bold text-lg border py-3 px-5">
-                    <FiMinusCircle className="text-red-600 " />
+                  <p className="font-bold border py-3 px-5 flex-1 text-center">
+                    1
+                  </p>
+                  <button className="font-bold text-lg border py-3 px-5 flex-1">
+                    <FiMinusCircle className="text-red-600" />
                   </button>
-
-                  <div></div>
                 </div>
-                <div className="hover:bg-red-600">
+                <div className="w-full lg:w-auto">
                   <button
-                    style={{
-                      backgroundColor: "#f7f4ef",
-                    }}
-                    className="px-48 py-4 font-bold text-md ">
+                    style={{ backgroundColor: "#f7f4ef" }}
+                    className="w-full lg:px-48 py-4 font-bold text-md hover:bg-red-600 transition-colors duration-300">
                     PURCHASE
                   </button>
                 </div>

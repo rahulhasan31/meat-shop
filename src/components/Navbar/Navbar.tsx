@@ -53,12 +53,12 @@ const NavbarPage = () => {
           className="hidden sm:flex gap-4 lg:font-bold"
           justify="center">
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/">
               HOME
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="#" aria-current="page">
+            <Link href="/products" aria-current="page">
               PRODUCTS
             </Link>
           </NavbarItem>

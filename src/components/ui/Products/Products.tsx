@@ -8,6 +8,7 @@ import { FaPlus } from "react-icons/fa6";
 import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 import { IoIosStar } from "react-icons/io";
+import Link from "next/link";
 
 const Products = () => {
   return (
@@ -212,6 +213,7 @@ const Products = () => {
                 </div>
               </div>
             </div>
+
             <div className="relative">
               <div className="absolute inset-x-0 top-7 flex justify-center z-10 max-sm:top-2 max-sm:">
                 <img

@@ -94,23 +94,35 @@ const NavbarPage = () => {
           </NavbarItem>
         </NavbarContent>
         <NavbarMenu>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem>
+            <div className="max-sm:mt-20 text-center bg-red-600 py-3 rounded-3xl ">
+              {" "}
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                className="w-full"
+                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
                 href="/"
                 size="lg">
-                {item}
+                Home
               </Link>
-            </NavbarMenuItem>
-          ))}
+            </div>
+            <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
+              {" "}
+              <Link
+                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
+                href="/products"
+                size="lg">
+                Products
+              </Link>
+            </div>
+            <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
+              {" "}
+              <Link
+                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
+                href="/products/736"
+                size="lg">
+                Products Details
+              </Link>
+            </div>
+          </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
     </>

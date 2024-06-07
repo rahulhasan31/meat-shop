@@ -1,10 +1,13 @@
+import ProductBanner from "@/components/ui/ProductBanner/ProductBanner";
+import ProductDetails from "@/components/ui/ProductDetails/ProductDetails";
 import React from "react";
 
 const SinglePage = ({ params }: any) => {
   return (
-    <div>
-      <h1>single page {params.id}</h1>
-    </div>
+    <>
+      <ProductBanner />
+      <ProductDetails />
+    </>
   );
 };
 

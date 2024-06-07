@@ -8,7 +8,6 @@ import { FaPlus } from "react-icons/fa6";
 import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 import { IoIosStar } from "react-icons/io";
-import Link from "next/link";
 
 const Products = () => {
   return (

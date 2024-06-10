@@ -63,22 +63,22 @@ const NavbarPage = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/about">
               ABOUT US
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="blog">
               BLOG
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="/service-page">
               PAGES
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
+            <Link color="foreground" href="contact">
               CONTACT
             </Link>
           </NavbarItem>
@@ -113,6 +113,7 @@ const NavbarPage = () => {
                 Products
               </Link>
             </div>
+
             <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
               {" "}
               <Link
@@ -120,6 +121,15 @@ const NavbarPage = () => {
                 href="/products/736"
                 size="lg">
                 Products Details
+              </Link>
+            </div>
+            <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
+              {" "}
+              <Link
+                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
+                href="/about"
+                size="lg">
+                About Us
               </Link>
             </div>
           </NavbarMenuItem>

@@ -4,7 +4,10 @@ import { useCallback, useEffect, useState } from "react";
 import { IoIosStar } from "react-icons/io";
 import FsLightbox from "fslightbox-react";
 import "./style.css";
+import { GiSelfLove } from "react-icons/gi";
+import { Divider } from "@nextui-org/react";
 import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
+import Review from "../Review/Review";
 interface CountdownTime {
   days: string;
   hours: string;
@@ -222,9 +225,21 @@ const ProductDetails = () => {
                 alt=""
               />
             </div>
+            <div className="mt-4">
+              <h1 className="flex items-center font-semibold text-lg">
+                <GiSelfLove />
+                ADD TO WISHLIST
+              </h1>
+              <Divider className="my-4" />
+            </div>
+            <div className="font-medium">
+              <p>SKU: 002</p>
+              <p>CATEGORY: LIPSTICK</p>
+            </div>
           </section>
         </Col>
       </Row>
+      <Review />
     </>
   );
 };

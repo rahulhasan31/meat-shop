@@ -8,7 +8,7 @@ import { FaPlus } from "react-icons/fa6";
 import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 import { IoIosStar } from "react-icons/io";
-
+import Link from "next/link";
 const Products = () => {
   return (
     <>
@@ -22,44 +22,48 @@ const Products = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6 p-4 lg:p-10 max-sm:gap-8">
-            <div className="relative  ">
-              <div className="absolute inset-x-0 top-7 flex justify-center z-10 max-sm:top-2 max-sm:">
-                <img
-                  src="https://i.ibb.co/99GtLN0/product-img03.png"
-                  alt="Hamburg Meat"
-                  className="object-cover lg:h-44 max-sm:h-48 max-sm:p-3"
-                />
-              </div>
-              <div
-                style={{
-                  backgroundColor: "#f1ece3",
-                }}
-                className="rounded-lg shadow-md overflow-hidden p-6 text-center h-96 relative box  rounded-b-lg max-sm:h-96 ">
-                <div className="lg:mt-16 relative lg:top-24 max-sm:top-20 max-sm:mt-16">
-                  <div className="flex relative -top-44  items-center  max-sm:-top-40 ">
-                    <h1 className="font-bold me-2">NEW</h1>
-                    <p>
-                      <IoIosStar className="text-red-600 " />
+            <Link href="/products/736">
+              <div className="relative  ">
+                <div className="absolute inset-x-0 top-7 flex justify-center z-10 max-sm:top-2 max-sm:">
+                  <img
+                    src="https://i.ibb.co/99GtLN0/product-img03.png"
+                    alt="Hamburg Meat"
+                    className="object-cover lg:h-44 max-sm:h-48 max-sm:p-3"
+                  />
+                </div>
+                <div
+                  style={{
+                    backgroundColor: "#f1ece3",
+                  }}
+                  className="rounded-lg shadow-md overflow-hidden p-6 text-center h-96 relative box  rounded-b-lg max-sm:h-96 ">
+                  <div className="lg:mt-16 relative lg:top-24 max-sm:top-20 max-sm:mt-16">
+                    <div className="flex relative -top-44  items-center  max-sm:-top-40 ">
+                      <h1 className="font-bold me-2 text-black">NEW</h1>
+                      <p>
+                        <IoIosStar className="text-red-600 " />
+                      </p>
+                    </div>
+                    <p className="text-red-600 font-bold uppercase text-sm mt-2">
+                      GORGANIC
                     </p>
-                  </div>
-                  <p className="text-red-600 font-bold uppercase text-sm mt-2">
-                    GORGANIC
-                  </p>
-                  <h2 className="text-xl font-bold mt-4">STACK MEATS</h2>
-                  <p className="text-lg font-bold mt-2">$6.99</p>
+                    <h2 className="text-xl font-bold mt-4 text-black">
+                      STACK MEATS
+                    </h2>
+                    <p className="text-lg font-bold mt-2 text-black">$6.99</p>
 
-                  <div className="lg:flex lg:justify-center lg:items-center bg-white lg:px-3 lg:py-3 lg:w-40 lg:mx-auto rounded-full gap-5 lg:mt-3 max-sm:flex max-sm:w-40 max-sm:justify-center max-sm:mx-auto max-sm:py-3 max-sm:mt-2 ">
-                    <button className="font-bold text-lg">
-                      <FiPlusCircle className="text-red-600" />
-                    </button>
-                    <p className="font-bold ">1</p>
-                    <button className="font-bold text-lg">
-                      <FiMinusCircle className="text-red-600" />
-                    </button>
+                    <div className="lg:flex lg:justify-center lg:items-center bg-white lg:px-3 lg:py-3 lg:w-40 lg:mx-auto rounded-full gap-5 lg:mt-3 max-sm:flex max-sm:w-40 max-sm:justify-center max-sm:mx-auto max-sm:py-3 max-sm:mt-2 ">
+                      <button className="font-bold text-lg">
+                        <FiPlusCircle className="text-red-600" />
+                      </button>
+                      <p className="font-bold text-black">1</p>
+                      <button className="font-bold text-lg">
+                        <FiMinusCircle className="text-red-600" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
             <div className="relative">
               <div className="absolute inset-x-0 top-7 flex justify-center z-10 max-sm:top-2 max-sm:">
                 <img
@@ -253,6 +257,7 @@ const Products = () => {
             </div>
           </div>
         </Col>
+
         <Col span={24} lg={6} className="mt-4 lg:mt-0">
           <div className="lg:ml-20">
             <h1 className="text-2xl font-bold mb-4">FILTER BY</h1>

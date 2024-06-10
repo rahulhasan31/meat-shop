@@ -1,4 +1,4 @@
-.bg {
+.bg-banner {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -6,7 +6,7 @@
   height: 400px;
 }
 
-.bg::before {
+.bg-banner::before {
   content: "";
   position: absolute;
   top: 0;
@@ -17,7 +17,7 @@
   background-size: cover;
 }
 
-.bg::after {
+.bg-banner::after {
   content: "";
   position: absolute;
   top: 0;
@@ -64,7 +64,7 @@
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .bg {
+  .bg-banner {
     height: 300px;
   }
 
@@ -80,7 +80,7 @@
 }
 
 @media (max-width: 480px) {
-  .bg {
+  .bg-banner {
     height: 200px;
   }
 

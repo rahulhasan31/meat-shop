@@ -5,7 +5,7 @@ import { FaGripLinesVertical } from "react-icons/fa";
 
 const ProductBanner = () => {
   return (
-    <div className="bg">
+    <div className="bg-banner">
       <div className="flex justify-center items-center">
         <h1 className="Os">Our Shop</h1>
         <h1 className="icon">

@@ -2,12 +2,9 @@ import React from "react";
 import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
 import { TbPointFilled } from "react-icons/tb";
 import { Divider, Input, Button, Textarea } from "@nextui-org/react";
-
 const Review = () => {
   return (
-    <div className="flex w-full flex-col lg:p-4 lg:rounded-none min-h-screen">
-      {" "}
-      {/* Added min-h-screen */}
+    <div className="flex w-full flex-col lg:p-4 lg:rounded-none">
       <Tabs aria-label="Options">
         <Tab key="review" title="REVIEWS">
           <Divider className="my-" />
@@ -25,21 +22,18 @@ const Review = () => {
               <div className="lg:flex flex-col mt-3">
                 <p className="font-medium ms-2 mb-4">No reviews yet</p>
               </div>
-              <div className="w-full flex flex-row flex-wrap gap-4">
-                <form action="" className="w-full">
-                  {" "}
-                  {/* Added w-full */}
+              <div className="w-full flex  gap-4  max-sm:h-[200px]">
+                <form action="">
                   <Textarea
                     type="text"
                     color="success"
                     placeholder="Write a review"
-                    className="w-full"></Textarea>{" "}
-                  {/* Changed w-96 to w-full */}
+                    className="w-96  max-sm:max-w-xs"></Textarea>
                   <Button
                     color="success"
                     variant="shadow"
                     className="text-white font-semibold px-10 mt-2">
-                    Submit
+                    Success
                   </Button>
                 </form>
               </div>

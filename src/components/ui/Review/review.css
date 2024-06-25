@@ -1,0 +1,18 @@
+.container {
+  min-height: 100vh; /* Ensures the container takes at least the full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  height: 100%;
+  overflow: hidden; /* Prevents the body from scrolling when the keyboard is open */
+}
+
+.formContainer {
+  width: 100%; /* Ensures the form elements use the full width of their container */
+}
+
+.textarea {
+  width: 100%; /* Ensures the textarea uses the full width available */
+}

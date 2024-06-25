@@ -22,21 +22,44 @@ const Review = () => {
               <div className="lg:flex flex-col mt-3">
                 <p className="font-medium ms-2 mb-4">No reviews yet</p>
               </div>
-              <div className="w-full flex  gap-4  max-sm:h-[200px]">
-                <form action="">
-                  <Textarea
-                    type="text"
-                    color="success"
-                    placeholder="Write a review"
-                    className="w-96  max-sm:max-w-xs"></Textarea>
-                  <Button
-                    color="success"
-                    variant="shadow"
-                    className="text-white font-semibold px-10 mt-2">
-                    Success
-                  </Button>
-                </form>
-              </div>
+              <section className=" flex  items-center rounded-lg ">
+                <div className="block p-6 px-5 rounded-lg  w-96 ">
+                  <form>
+                    <div className="form-group mb-6">
+                      <textarea
+                        className="
+  form-control
+  block
+  w-full
+  px-3
+  py-1.5
+  text-base
+  font-normal
+ 
+  border border-solid border-gray-300
+  rounded
+  transition
+  ease-in-out
+  m-0
+  focus:bg-white focus:border-blue-600 focus:outline-none
+"
+                        placeholder="Message"></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="
+w-full
+px-6
+py-2.5
+
+btn btn-primary bg-gradient-to-r from-primary to-secondary text-white
+ease-in-out">
+                      Send
+                    </button>
+                  </form>
+                </div>
+              </section>
             </CardBody>
           </Card>
         </Tab>

@@ -16,11 +16,7 @@ const Banner = () => {
       <SwiperSlide>
         <div className="banner-slide">
           <div className="banner-overlay"></div>
-          <img
-            className=""
-            src="https://i.ibb.co/6b5H3sg/Black-Modern-Burger-Promotion-Banner-Landscape-2.png"
-            alt="Fresh Meat Banner"
-          />
+          <img className="" src="/branner.png" alt="Fresh Meat Banner" />
           <div className="banner-text">
             <h1 className="font-serif ">Fresh Meat</h1>
             <p className="text-red-600 font-bold text-2xl font-serif">

@@ -144,7 +144,9 @@ ease-in-out">
               <section className=" min-h-screen grid grid-cols-1  place-content-center lg:place-items-center lg:gap-16 max-w-7xl mx-auto px-6 py-10">
                 <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 col-span-6">
                   {data?.data.map((review: any) => (
-                    <div className="relative z-10 bg-white  rounded-sm flex flex-col lg:items-center justify-between lg:flex-row gap-10 p-7">
+                    <div
+                      key={review._id}
+                      className="relative z-10 bg-white  rounded-sm flex flex-col lg:items-center justify-between lg:flex-row gap-10 p-7">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

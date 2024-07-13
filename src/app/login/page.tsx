@@ -81,7 +81,7 @@ const LoginPage: React.FC = () => {
         refreshToken: data?.refreshToken,
       });
     }
-  }, [isSuccess]);
+  }, []);
 
   return (
     <div className="relative">

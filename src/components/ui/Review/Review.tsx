@@ -53,9 +53,18 @@ const Review = () => {
 
   useEffect(() => {
     if (isError && isError.status === 401) {
-      refreshTokenMake();
+      refreshTokenMake().then(decoded => {
+        if (decoded) {
+          console.log("Token refreshed and decoded:", decoded);
+          // Handle the successful refresh, e.g., update user state
+        } else {
+          console.error("Failed to refresh token");
+          // Handle failure, e.g., redirect to login
+        }
+      });
     }
   }, [isError, refreshTokenMake]);
+
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {

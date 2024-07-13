@@ -8,23 +8,32 @@ import { decodedToken } from "./jwt";
 const useRefreshToken = () => {
   const refreshTokenMake = async () => {
     const refresh = Cookies.get("refreshToken");
-    // console.log("refresh", refresh);
+    console.log("Refresh token:", refresh); // Log the refresh token for debugging
+    if (!refresh) {
+      console.error("No refresh token found in cookies");
+      return null;
+    }
+
     try {
       const response = await fetch(
         "http://localhost:5000/api/v1/auth/refresh-token",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({ token: refresh }),
         }
       );
 
       if (!response.ok) {
-        throw new Error("Failed to refresh token");
+        const errorData = await response.json();
+        console.error("Error response from server:", errorData);
+        throw new Error(`Failed to refresh token: ${response.status}`);
       }
 
       const data = await response.json();
-      //   console.log("data", data);
+      console.log("Response data:", data); // Log the response data for debugging
       const newAccessToken = data.accessToken;
       const newRefreshToken = data.refreshToken;
       setToLocalStored("access", newAccessToken);

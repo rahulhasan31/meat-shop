@@ -13,22 +13,23 @@ import {
 } from "@nextui-org/react";
 
 import "./Navbar.css";
+import { FaCartArrowDown } from "react-icons/fa";
+import { useAppSelector } from "@/redux/lib/hooks";
+import { useEffect } from "react";
+import { isLoggedIn } from "@/authService/authservice";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/authService/authContext";
 
 const NavbarPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [clientProductsCount, setClientProductsCount] = useState(0);
+  const { products } = useAppSelector(state => state.cart);
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  useEffect(() => {
+    setClientProductsCount(products.length);
+  }, [products]);
+  const { isLoggedIn, logout, userRole } = useAuth();
+  console.log("userRole Navbar role", userRole);
 
   return (
     <>
@@ -84,14 +85,65 @@ const NavbarPage = () => {
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Button as={Link} color="primary" href="/signup" variant="flat">
-              Sign Up
+          <NavbarItem className="me-3">
+            <Button
+              color="success"
+              as={Link}
+              href="/cart"
+              variant="shadow"
+              className="px-5 py-2 bg-red-600 text-white rounded-full">
+              <FaCartArrowDown className="text-xl" />
             </Button>
+            <p className="absolute -top-2  ms-12 bg-red-600 text-white px-3 py-1 rounded-full ">
+              {clientProductsCount}
+            </p>
           </NavbarItem>
+          {isLoggedIn ? (
+            <>
+              <NavbarItem>
+                <Button
+                  className=" text-white rounded-full"
+                  color="success"
+                  as={Link}
+                  href="/user/dashboard"
+                  variant="shadow">
+                  Dashboard
+                </Button>
+              </NavbarItem>
+              <NavbarItem className=" lg:flex">
+                <Button
+                  onClick={logout}
+                  className="rounded-full"
+                  color="danger"
+                  variant="shadow">
+                  Logout
+                </Button>
+              </NavbarItem>
+            </>
+          ) : (
+            <>
+              <NavbarItem className=" lg:flex">
+                <Button
+                  className="px-5"
+                  color="danger"
+                  as={Link}
+                  href="/login"
+                  variant="shadow">
+                  Login
+                </Button>
+              </NavbarItem>
+              <NavbarItem>
+                <Button
+                  className="px-5"
+                  color="danger"
+                  as={Link}
+                  href="/signup"
+                  variant="shadow">
+                  Sign Up
+                </Button>
+              </NavbarItem>
+            </>
+          )}
         </NavbarContent>
         <NavbarMenu>
           <NavbarMenuItem>

@@ -1,3 +1,5 @@
+"use client";
+
 import AskedQuestions from "@/components/AskedQuestions/AskedQuestions";
 import Banner from "@/components/Banner/Banner";
 import BlogSection from "@/components/BlogSection/BlogSection";
@@ -8,20 +10,37 @@ import ParallaxSection from "@/components/ParallaxSecction/ParallaxSection";
 import QualityBanner from "@/components/QualityBanner/QualityBanner";
 import TowSlider from "@/components/TowSlider/TowSlider";
 import TwoSection from "@/components/TwoSection/TwoSection";
+import { useEffect, useState } from "react";
+import Spinner from "../components/ui/Spinner/Spinner";
 
 export default function Home() {
+  const [isLoading, SetIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      SetIsLoading(false);
+    }, 2500);
+  });
   return (
     <>
-      <Banner />
-      <QualityBanner />
-      <TwoSection />
-      <OurOrganic />
-      <TowSlider />
-      <OrganicProducts />
-      <OurTeam />
-      <AskedQuestions />
-      <ParallaxSection />
-      <BlogSection />
+      {isLoading ? (
+        <>
+          <Spinner />
+        </>
+      ) : (
+        <>
+          <Banner />
+          <QualityBanner />
+          <TwoSection />
+          <OurOrganic />
+          <TowSlider />
+          <OrganicProducts />
+          <OurTeam />
+          <AskedQuestions />
+          <ParallaxSection />
+          <BlogSection />
+        </>
+      )}
     </>
   );
 }

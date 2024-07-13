@@ -6,6 +6,7 @@ import { Divider, Input, Button, Textarea } from "@nextui-org/react";
 import { useParams } from "next/navigation";
 import {
   useCreateReviewMutation,
+  useDeleteReviewMutation,
   useGetReviewQuery,
 } from "@/redux/service/reviewSlice/reviewSlice";
 type Inputs = {
@@ -13,32 +14,55 @@ type Inputs = {
   productID: string;
   userEmail: string;
 };
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from "@nextui-org/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAuth } from "@/authService/authContext";
 import { useEffect, useState } from "react";
 import { getUserInfo } from "@/authService/authservice";
 import { useGetSingleUserQuery } from "@/redux/service/auth/authSlice";
 import Swal from "sweetalert2";
+import Cookies from "js-cookie";
+import { setCookiesToken, setToLocalStored } from "@/ulits/local-sotorage";
+import { decodedToken } from "@/ulits/jwt";
+import useRefreshToken from "@/ulits/useRefreshToken";
 
 const Review = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [deleteReview, { error: deleteErr }] = useDeleteReviewMutation();
+
   const [isId, setIsId] = useState<string | null>(null);
-  // console.log("isId", isId);
+  const [isError, setIsError] = useState<any | null>(null);
+  // console.log("isError", isError);
 
   const { id } = useParams();
   const { data } = useGetReviewQuery(id);
-  console.log("data,", data);
+  // console.log("data,", data);
 
   const [userInfo, setUserInfo] = useState<any>(null);
   // console.log(userInfo);
   const userId: string = userInfo?.id;
   // console.log(userId);
+  const { refreshTokenMake } = useRefreshToken();
 
+  useEffect(() => {
+    if (isError && isError.status === 401) {
+      refreshTokenMake();
+    }
+  }, [isError, refreshTokenMake]);
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
         const userInfo = await getUserInfo();
         if (userInfo) {
           setUserInfo(userInfo);
+          setIsError(getError);
         } else {
           console.log("No user info found or token refresh failed.");
         }
@@ -52,7 +76,7 @@ const Review = () => {
     // Start the token refresh interval
   }, []);
 
-  const { data: userData } = useGetSingleUserQuery(userId);
+  const { data: userData, error: getError } = useGetSingleUserQuery(userId);
   // console.log("review single user", data?.data.userEmail);
 
   const {
@@ -62,17 +86,58 @@ const Review = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const [createReview, { isSuccess, isError }] = useCreateReviewMutation();
+  const [createReview, { isSuccess, error }] = useCreateReviewMutation();
   const onSubmit: SubmitHandler<Inputs> = data => {
     const review = {
       productID: id,
       review: data?.review,
       userEmail: userData?.data?.userEmail,
     };
-    console.log(review);
+    // console.log(review);
     createReview(review);
+    setIsError(error);
   };
 
+  const handleDelete = (id: any) => {
+    deleteReview(id);
+    setIsError(deleteErr);
+  };
+  // useEffect(() => {
+  //   const refeshTokenMake = async () => {
+  //     if (isError && isError.status === 401) {
+  //       const refresh = Cookies.get("refreshToken");
+  //       console.log("refresh", refresh);
+  //       try {
+  //         const response = await fetch(
+  //           "http://localhost:5000/api/v1/auth/refresh-token",
+  //           {
+  //             method: "POST",
+  //             headers: { "Content-Type": "application/json" },
+  //             body: JSON.stringify({ token: refresh }),
+  //           }
+  //         );
+
+  //         if (!response.ok) {
+  //           throw new Error("Failed to refresh token");
+  //         }
+
+  //         const data = await response.json();
+  //         console.log("data", data);
+  //         const newAccessToken = data.accessToken;
+  //         const newRefreshToken = data.refreshToken;
+  //         setToLocalStored("access", newAccessToken);
+  //         setCookiesToken("refreshToken", newRefreshToken);
+
+  //         // Decode the new access token to return the user info
+  //         return decodedToken(newAccessToken);
+  //       } catch (error) {
+  //         console.error("Error refreshing token:", error);
+  //         return null;
+  //       }
+  //     }
+  //   };
+  //   refeshTokenMake();
+  // }, [isError]);
   useEffect(() => {
     if (isSuccess) {
       Swal.fire({
@@ -84,6 +149,7 @@ const Review = () => {
       });
     }
   }, [isSuccess]);
+
   return (
     <div className="flex w-full flex-col lg:p-4 lg:rounded-none">
       <Tabs aria-label="Options">
@@ -141,7 +207,7 @@ ease-in-out">
                 </div>
               </section>
               <div className="grid grid-cols-3"></div>
-              <section className=" min-h-screen grid grid-cols-1  place-content-center lg:place-items-center lg:gap-16 max-w-7xl mx-auto px-6 py-10">
+              <section className=" min-h-screen grid grid-cols-1    lg:gap-6 max-w-7xl mx-auto px-6 py-6">
                 <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 col-span-6">
                   {data?.data.map((review: any) => (
                     <div
@@ -168,13 +234,29 @@ ease-in-out">
                         </p>
                         <p className="text-gray-400">
                           <span className="name text-gray-900 capitalize font-bold">
-                            timothy quano
+                            {userData?.data?.userName}
                           </span>{" "}
                           &#8212; meatShop, customer{" "}
                         </p>
 
-                        <Button>edit</Button>
-                        <Button color="danger">Delete</Button>
+                        {review?.userEmail === userData?.data?.userEmail ? (
+                          <>
+                            <Button
+                              color="success"
+                              className="me-2 text-white"
+                              onPress={onOpen}>
+                              Edit
+                            </Button>
+
+                            <Button
+                              onClick={() => handleDelete(review._id)}
+                              color="danger">
+                              Delete
+                            </Button>
+                          </>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                       <div className="relative shrink-0">
                         <img
@@ -225,6 +307,46 @@ ease-in-out">
           </Card>
         </Tab>
       </Tabs>
+
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+        <ModalContent>
+          {onClose => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Modal Title
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Magna exercitation reprehenderit magna aute tempor cupidatat
+                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
+                  aliqua enim laboris do dolor eiusmod. Et mollit incididunt
+                  nisi consectetur esse laborum eiusmod pariatur proident Lorem
+                  eiusmod et. Culpa deserunt nostrud ad veniam.
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </div>
   );
 };

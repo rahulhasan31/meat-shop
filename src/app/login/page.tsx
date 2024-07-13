@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { storeCookies, storeUserInfo } from "@/authService/authservice";
 import Link from "next/link";
 import { useAuth } from "@/authService/authContext";
+import Image from "next/image";
 
 type Inputs = {
   userName: string;
@@ -81,13 +82,15 @@ const LoginPage: React.FC = () => {
         refreshToken: data?.refreshToken,
       });
     }
-  }, []);
+  }, [isSuccess, data?.accessToken, data?.refreshToken, login]);
 
   return (
     <div className="relative">
-      <img
+      <Image
         src="/bg-img.png"
-        className="absolute inset-0 object-cover w-full h-full "
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 w-full h-full"
         alt=""
       />
       <div className="absolute inset-0 bg-black opacity-60"></div>

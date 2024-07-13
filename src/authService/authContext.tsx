@@ -72,7 +72,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
 
       setUserRole(userInfo?.role);
     }
-  }, []);
+  }, [userInfo?.role]);
 
   const login = ({
     access,

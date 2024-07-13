@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/authService/authContext";
-
+import Image from "next/image";
 type Inputs = {
   userName: string;
   userEmail: string;
@@ -99,7 +99,7 @@ const SignUp = () => {
   }, []);
   return (
     <div className="relative">
-      <img
+      <Image
         src="/bg-img.png"
         className="absolute inset-0 object-cover w-full h-full "
         alt=""

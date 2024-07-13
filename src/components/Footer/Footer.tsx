@@ -23,9 +23,7 @@ const Footer = () => {
                 the app now
               </p>
               <div className="flex items-center justify-center gap-4 lg:block">
-                <a
-                  href="javascript:;"
-                  className="lg:mb-5 flex justify-center lg:justify-start">
+                <a className="lg:mb-5 flex justify-center lg:justify-start">
                   <svg
                     width="134"
                     height="45"
@@ -141,9 +139,7 @@ const Footer = () => {
                     </defs>
                   </svg>
                 </a>
-                <a
-                  href="javascript:;"
-                  className="flex justify-center lg:justify-start">
+                <a className="flex justify-center lg:justify-start">
                   <svg
                     width="151"
                     height="45"
@@ -267,37 +263,27 @@ const Footer = () => {
                 </h4>
                 <ul className=" transition-all duration-500">
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className="text-white max-lg:flex hover:text-white">
+                    <a className="text-white max-lg:flex hover:text-white">
                       Home
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       About
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       Pricing
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       Features
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       Pro Version
                     </a>
                   </li>
@@ -310,37 +296,27 @@ const Footer = () => {
                 </h4>
                 <ul className=" transition-all duration-500">
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className="text-white max-lg:flex hover:text-white">
+                    <a className="text-white max-lg:flex hover:text-white">
                       Customer Support
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       Cookies
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       License
                     </a>
                   </li>
                   <li className="mb-6">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       Terms & Conditions
                     </a>
                   </li>
                   <li className="">
-                    <a
-                      href="javascript:;"
-                      className=" text-white max-lg:flex hover:text-white">
+                    <a className=" text-white max-lg:flex hover:text-white">
                       Privacy Policy
                     </a>
                   </li>
@@ -351,9 +327,7 @@ const Footer = () => {
             <div className=" lg:text-left col-span-full md:col-span-1 lg:w-max">
               <div className="flex justify-between items-center mb-7 max-w-sm mx-auto">
                 <h4 className="text-lg text-white font-medium ">Instagram</h4>
-                <a
-                  href="javascript:;"
-                  className="flex items-center gap-2 text-xs text-indigo-600 font-semibold">
+                <a className="flex items-center gap-2 text-xs text-indigo-600 font-semibold">
                   Visit All
                 </a>
               </div>

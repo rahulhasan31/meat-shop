@@ -10,7 +10,7 @@ import { Divider } from "@nextui-org/react";
 import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
 import "./style.css";
 import Review from "@/components/ui/Review/Review";
-
+import Image from "next/image";
 interface CountdownTime {
   days: string;
   hours: string;
@@ -126,7 +126,7 @@ const SinglePage = ({ params }: any) => {
           <Col xs={24} sm={24} md={12} lg={12}>
             <div className="  lg:ps-4 lg:pe-4  max-sm:p-4">
               <div className="image-container">
-                <img
+                <Image
                   src={mainImage}
                   alt="Main"
                   className="main-image rounded-2xl shadow-sm"
@@ -134,7 +134,7 @@ const SinglePage = ({ params }: any) => {
               </div>
               <div className="thumbnail-container">
                 {thumbnails.map((thumb, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={thumb}
                     alt={`Thumbnail ${index + 1}`}
@@ -229,7 +229,7 @@ const SinglePage = ({ params }: any) => {
                   GUARANTEED SAFE CHECKOUT:
                 </h1>
 
-                <img
+                <Image
                   src="https://themegenix.net/html/bemet/assets/img/product/payment_method.png"
                   alt=""
                 />

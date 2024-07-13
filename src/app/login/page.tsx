@@ -147,7 +147,7 @@ const LoginPage: React.FC = () => {
                     <button
                       type="submit"
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-500">
-                      SignUp
+                      Login
                     </button>
                     <p className="text-red-500 text-center mt-1">
                       {getErrorMessage(error as FetchBaseQueryError)}
@@ -156,7 +156,7 @@ const LoginPage: React.FC = () => {
                   <p>
                     Dont have Account{" "}
                     <Link className="text-blue-500" href={"/signup"}>
-                      Login Now
+                      SignUp Now
                     </Link>
                   </p>
                 </form>

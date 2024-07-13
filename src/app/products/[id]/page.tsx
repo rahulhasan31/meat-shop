@@ -126,7 +126,7 @@ const SinglePage = ({ params }: any) => {
           <Col xs={24} sm={24} md={12} lg={12}>
             <div className="  lg:ps-4 lg:pe-4  max-sm:p-4">
               <div className="image-container">
-                <Image
+                <img
                   src={mainImage}
                   alt="Main"
                   className="main-image rounded-2xl shadow-sm"
@@ -134,7 +134,7 @@ const SinglePage = ({ params }: any) => {
               </div>
               <div className="thumbnail-container">
                 {thumbnails.map((thumb, index) => (
-                  <Image
+                  <img
                     key={index}
                     src={thumb}
                     alt={`Thumbnail ${index + 1}`}
@@ -230,6 +230,8 @@ const SinglePage = ({ params }: any) => {
                 </h1>
 
                 <Image
+                  width={500}
+                  height={100}
                   src="https://themegenix.net/html/bemet/assets/img/product/payment_method.png"
                   alt=""
                 />

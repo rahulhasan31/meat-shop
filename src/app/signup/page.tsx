@@ -99,7 +99,7 @@ const SignUp = () => {
   }, []);
   return (
     <div className="relative">
-      <Image
+      <img
         src="/bg-img.png"
         className="absolute inset-0 object-cover w-full h-full "
         alt=""

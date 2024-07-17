@@ -27,7 +27,9 @@ const OrderDetails = ({ order }: { order: any }) => {
                 Customer’s Cart
               </p>
               {order?.products.map((product: any) => (
-                <div className="mt-4 md:mt-6 flex  flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full ">
+                <div
+                  key={product?._id}
+                  className="mt-4 md:mt-6 flex  flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full ">
                   <div className="pb-4 md:pb-8 w-full md:w-40">
                     <img
                       className="w-full hidden md:block"

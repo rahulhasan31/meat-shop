@@ -1,7 +1,4 @@
 "use client";
-
-"use client";
-
 import { useAuth } from "@/authService/authContext";
 import { getUserInfo } from "@/authService/authservice";
 import Spinner from "@/components/ui/Spinner/Spinner";

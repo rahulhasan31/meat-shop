@@ -8,6 +8,7 @@ import {
   useCreateReviewMutation,
   useDeleteReviewMutation,
   useGetReviewQuery,
+  useUpdateReviewMutation,
 } from "@/redux/service/reviewSlice/reviewSlice";
 type Inputs = {
   review: string;
@@ -21,6 +22,7 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  Spinner,
 } from "@nextui-org/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAuth } from "@/authService/authContext";
@@ -35,15 +37,17 @@ import useRefreshToken from "@/ulits/useRefreshToken";
 
 const Review = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [deleteReview, { error: deleteErr }] = useDeleteReviewMutation();
-
+  const [deleteReview, { error: deleteErr, isSuccess: deleteSucces }] =
+    useDeleteReviewMutation();
+  const [updateReview, { error: updateError, isSuccess: updateSucess }] =
+    useUpdateReviewMutation();
   const [isId, setIsId] = useState<string | null>(null);
   const [isError, setIsError] = useState<any | null>(null);
-  // console.log("isError", isError);
+  // console.log("isError", isId);
 
   const { id } = useParams();
-  const { data } = useGetReviewQuery(id);
-  // console.log("data,", data);
+  const { data, isLoading } = useGetReviewQuery(id);
+  // console.log("data length:", data?.data.length);
 
   const [userInfo, setUserInfo] = useState<any>(null);
   // console.log(userInfo);
@@ -92,6 +96,7 @@ const Review = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -103,8 +108,24 @@ const Review = () => {
       userEmail: userData?.data?.userEmail,
     };
     // console.log(review);
+    reset();
     createReview(review);
     setIsError(error);
+  };
+  const updateSubmit = (event: any) => {
+    event.preventDefault();
+    const form = event.target;
+    const review = form.review.value;
+    console.log({ id: isId, review: review });
+
+    const reviewData = {
+      id: isId,
+      data: {
+        review: review,
+      },
+    };
+    updateReview(reviewData);
+    setIsError(updateError);
   };
 
   const handleDelete = (id: any) => {
@@ -149,6 +170,7 @@ const Review = () => {
   // }, [isError]);
   useEffect(() => {
     if (isSuccess) {
+      reset();
       Swal.fire({
         position: "top",
         icon: "success",
@@ -158,6 +180,32 @@ const Review = () => {
       });
     }
   }, [isSuccess]);
+  useEffect(() => {
+    if (deleteSucces) {
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Delete Success",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    }
+  }, [deleteSucces]);
+  useEffect(() => {
+    if (updateSucess) {
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Review Update Success",
+        showConfirmButton: false,
+        timer: 1000,
+      });
+    }
+  }, [updateSucess]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="flex w-full flex-col lg:p-4 lg:rounded-none">
@@ -173,7 +221,7 @@ const Review = () => {
               className="lg:p-5">
               <p className="font-medium text-slate-900 text-2xl ">
                 {" "}
-                Customer Reviews (0)
+                Customer Reviews ({data?.data.length})
               </p>
 
               <section className=" flex  items-center rounded-lg ">
@@ -208,15 +256,15 @@ w-full
 px-6
 py-2.5
 
-btn btn-primary bg-gradient-to-r from-primary to-secondary text-white
+btn btn-success bg-gradient-to-r from-success to-success text-white
 ease-in-out">
                       Send
                     </button>
                   </form>
                 </div>
               </section>
-              <div className="grid grid-cols-3"></div>
-              <section className=" min-h-screen grid grid-cols-1    lg:gap-6 max-w-7xl mx-auto px-6 py-6">
+
+              <section className="  grid grid-cols-1   ">
                 <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 col-span-6">
                   {data?.data.map((review: any) => (
                     <div
@@ -241,39 +289,45 @@ ease-in-out">
                         <p className="my-3 text-2xl font-bold text-red-500">
                           {review?.review}
                         </p>
-                        <p className="text-gray-400">
-                          <span className="name text-gray-900 capitalize font-bold">
-                            {userData?.data?.userName}
-                          </span>{" "}
-                          &#8212; meatShop, customer{" "}
-                        </p>
 
-                        {review?.userEmail === userData?.data?.userEmail ? (
-                          <>
-                            <Button
-                              color="success"
-                              className="me-2 text-white"
-                              onPress={onOpen}>
-                              Edit
-                            </Button>
+                        <div className="relative shrink-0 ">
+                          <div className="flex items-center">
+                            <img
+                              src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+                              alt="Timothy Quano"
+                              className="rounded-full w-16 h-16 object-cover 2xl:w-28 2xl:h-28"
+                            />
+                            <p className="text-gray-400 ms-3">
+                              <span className="name text-gray-900 capitalize font-bold">
+                                {userData?.data?.userName}
+                              </span>{" "}
+                              {userData?.data?.userEmail}
+                            </p>
+                          </div>
+                          <div className="rounded-full w-16 h-16 2xl:w-28 2xl:h-28 bg-gradient-to-r from-[#deb2b280] to-[#deb2b280] absolute inset-0"></div>
+                          <div className="mt-3">
+                            {review?.userEmail === userData?.data?.userEmail ? (
+                              <>
+                                <Button
+                                  onClick={() => setIsId(review._id)}
+                                  color="success"
+                                  className="me-2 text-white rounded-full"
+                                  onPress={onOpen}>
+                                  Edit
+                                </Button>
 
-                            <Button
-                              onClick={() => handleDelete(review._id)}
-                              color="danger">
-                              Delete
-                            </Button>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                      <div className="relative shrink-0">
-                        <img
-                          src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                          alt="Timothy Quano"
-                          className="rounded-full w-16 h-16 object-cover 2xl:w-28 2xl:h-28"
-                        />
-                        <div className="rounded-full w-16 h-16 2xl:w-28 2xl:h-28 bg-gradient-to-r from-[#deb2b280] to-[#deb2b280] absolute inset-0"></div>
+                                <Button
+                                  className="rounded-3xl"
+                                  onClick={() => handleDelete(review._id)}
+                                  color="danger">
+                                  Delete
+                                </Button>
+                              </>
+                            ) : (
+                              <></>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -324,34 +378,53 @@ ease-in-out">
               <ModalHeader className="flex flex-col gap-1">
                 Modal Title
               </ModalHeader>
-              <ModalBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat
-                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                  aliqua enim laboris do dolor eiusmod. Et mollit incididunt
-                  nisi consectetur esse laborum eiusmod pariatur proident Lorem
-                  eiusmod et. Culpa deserunt nostrud ad veniam.
-                </p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
-              </ModalFooter>
+              <form onSubmit={updateSubmit}>
+                <ModalBody>
+                  <div className="form-group mb-6">
+                    <textarea
+                      required
+                      name="review"
+                      id="review"
+                      className="
+  form-control
+  block
+  w-full
+  px-3
+  py-1.5
+  text-base
+  font-normal
+ 
+  border border-solid border-gray-300
+  rounded
+  transition
+  ease-in-out
+  m-0
+  focus:bg-white focus:border-blue-600 focus:outline-none
+"
+                      placeholder="Message"></textarea>
+                  </div>
+                </ModalBody>
+
+                <ModalFooter>
+                  <Button color="danger" variant="light" onPress={onClose}>
+                    Close
+                  </Button>
+
+                  {updateSucess ? (
+                    <>
+                      <Button onPress={onClose} type="submit" color="primary">
+                        Save
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button type="submit" color="primary">
+                        Save
+                      </Button>
+                    </>
+                  )}
+                </ModalFooter>
+              </form>
             </>
           )}
         </ModalContent>

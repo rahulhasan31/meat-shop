@@ -4,16 +4,28 @@ const OrderSlice = api.injectEndpoints({
   endpoints: builder => ({
     createOrder: builder.mutation({
       query: data => ({
-        url: `http://localhost:5000/api/v1/order/create-order`,
+        url: "http://localhost:5000/api/v1/order/create-order",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access")}`,
         },
-        data: data,
+        body: data,
       }),
+      invalidatesTags: ["order"],
+    }),
+
+    getUserOrder: builder.query({
+      query: id => ({
+        url: `http://localhost:5000/api/v1/order/user-order/${id}`,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+      }),
+      providesTags: ["order"],
     }),
   }),
 });
 
-export const { useCreateOrderMutation } = OrderSlice;
+export const { useCreateOrderMutation, useGetUserOrderQuery } = OrderSlice;

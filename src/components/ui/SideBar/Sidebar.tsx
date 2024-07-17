@@ -1,24 +1,49 @@
-import React from "react";
+"use client";
 import {
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
+import Link from "next/link";
+import { useAuth } from "@/authService/authContext";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const items = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  UserOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
 const SidebarPage = () => {
+  const { isLoggedIn, logout, userRole } = useAuth();
+  const items = [
+    {
+      key: "profile",
+      icon: <UserOutlined />,
+      label: <Link href={"/dashboard"}>My Profile</Link>,
+    },
+    {
+      key: "Checkout",
+      icon: <UserOutlined />,
+      label: <Link href={"/checkout"}>Checkout</Link>,
+    },
+    {
+      key: "My Order",
+      icon: <UserOutlined />,
+      label: <Link href={"/myorder"}>My Order</Link>,
+    },
+  ];
+
+  if (userRole === "admin") {
+    items.push(
+      {
+        key: "all-user",
+        icon: <UploadOutlined />,
+        label: <Link href={`/all-user`}>All-User</Link>,
+      },
+      {
+        key: "order-confirm",
+        icon: <UploadOutlined />,
+        label: <Link href={`/order-confirm`}>Order Confirm</Link>,
+      }
+    );
+  }
   return (
     <Sider
       breakpoint="lg"

@@ -11,6 +11,10 @@ import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
 import "./style.css";
 import Review from "@/components/ui/Review/Review";
 import Image from "next/image";
+import { useAppDispatch } from "@/redux/lib/hooks";
+import { addToCart } from "@/redux/features/cart/cartSlice";
+import Swal from "sweetalert2";
+import { IProducts } from "@/app/types/ProductType";
 interface CountdownTime {
   days: string;
   hours: string;
@@ -22,6 +26,8 @@ const SinglePage = ({ params }: any) => {
   const id: string = params.id;
 
   const { data, isLoading } = useGetSingleProductQuery(id);
+  // console.log(data.data);
+
   const [countDownTime, setCountDownTime] = useState<CountdownTime>({
     days: "00",
     hours: "00",
@@ -115,7 +121,18 @@ const SinglePage = ({ params }: any) => {
     data?.data.imgUrlOne,
     data?.data.imgUrlTwo,
   ];
+  const dispatch = useAppDispatch();
 
+  const handleAddToCart = (product: IProducts) => {
+    dispatch(addToCart(product));
+    Swal.fire({
+      position: "top",
+      icon: "success",
+      title: "Add To Cart Success",
+      showConfirmButton: false,
+      timer: 1000,
+    });
+  };
   return (
     <>
       <ProductBanner />
@@ -216,11 +233,12 @@ const SinglePage = ({ params }: any) => {
               </div>
               <div className="lg:mt-8 mt-4">
                 <button
+                  onClick={() => handleAddToCart(data?.data)}
                   style={{
                     backgroundColor: "#2a1510",
                   }}
                   className="w-full text-white text-xl font-bold py-4 ">
-                  BUY IT NOW{" "}
+                  Add To Cart{" "}
                 </button>
               </div>
 

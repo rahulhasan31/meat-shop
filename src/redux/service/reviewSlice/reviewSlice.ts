@@ -26,6 +26,19 @@ const reviewSlice = api.injectEndpoints({
       }),
       invalidatesTags: ["review"],
     }),
+    updateReview: builder.mutation({
+      query: ({ id, data }) => ({
+        url: `http://localhost:5000/api/v1/review/review-update/${id}`,
+
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+        method: "PATCH",
+        body: data,
+      }),
+      invalidatesTags: ["review"],
+    }),
     getSingleReview: builder.query({
       query: id => ({
         url: `${RURL}//${id}`,
@@ -48,4 +61,5 @@ export const {
   useCreateReviewMutation,
   useGetReviewQuery,
   useDeleteReviewMutation,
+  useUpdateReviewMutation,
 } = reviewSlice;

@@ -105,7 +105,7 @@ const NavbarPage = () => {
                   className=" text-white rounded-full"
                   color="success"
                   as={Link}
-                  href="/user/dashboard"
+                  href="/dashboard"
                   variant="shadow">
                   Dashboard
                 </Button>

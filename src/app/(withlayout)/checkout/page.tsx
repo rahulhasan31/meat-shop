@@ -4,21 +4,15 @@ import { useAuth } from "@/authService/authContext";
 import Checkout from "@/components/Checkout/Checkout";
 import React from "react";
 import Spinner from "@/components/ui/Spinner/Spinner";
+import useAuthCheck from "@/ulits/PriveteRoute";
 
 const CheckoutPage = () => {
-  const { isLoggedIn, logout, userRole } = useAuth();
-  const router = useRouter();
+  const { isLoggedIn, userRole } = useAuthCheck();
+
+  if (!isLoggedIn) return <Spinner />;
   return (
     <>
-      {(isLoggedIn && userRole === "user") || userRole === "admin" ? (
-        <>
-          <Checkout />
-        </>
-      ) : (
-        <>
-          <>{router.push("/")}</>
-        </>
-      )}
+      {userRole === "user" || userRole === "admin" ? <Checkout /> : <Spinner />}
     </>
   );
 };

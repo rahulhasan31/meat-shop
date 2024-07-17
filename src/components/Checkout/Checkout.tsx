@@ -12,6 +12,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import Swal from "sweetalert2";
 import { getUserInfo } from "@/authService/authservice";
 import { useGetSingleUserQuery } from "@/redux/service/auth/authSlice";
+import { useCreateOrderMutation } from "@/redux/service/order/orderSlice";
 
 const stripePromise = loadStripe(
   "pk_test_51M6YTaIOaRhLiCR9IUacPMWr7kIOpNT2oEv4gm3lLOoRyLZ0sQplaW3fiYroKVA63hTjrAq5homSPjhn01lr0z36007McI12l5"
@@ -26,6 +27,7 @@ const Checkout = () => {
   const [clientSecret, setClientSecret] = useState<string | null>("");
 
   const { products } = useAppSelector(state => state.cart);
+  console.log("products", products[0].name);
 
   const savedTotal: any | null = localStorage.getItem("total");
 
@@ -45,14 +47,17 @@ const Checkout = () => {
     }
   }, [isClient, products]);
   console.log(alto);
-  const amout = alto * 100;
-  console.log(amout);
+  const amount = alto * 100;
+  console.log(amount);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/v1/pay/create-payment-intent", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount: amout }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("access")}`,
+      },
+      body: JSON.stringify({ amount: amount }),
     })
       .then(res => res.json())
       .then(data => setClientSecret(data.clientSecret))
@@ -107,6 +112,7 @@ const Checkout = () => {
             icon: "success",
           });
           setTransactionId(paymentIntent.id);
+          handleOrder(paymentIntent.id);
         }
         setProcess(false);
       }
@@ -140,7 +146,36 @@ const Checkout = () => {
 
   const { data: userData } = useGetSingleUserQuery(userId);
   console.log("userData", userData);
+  const [createOrder, { error, isSuccess }] = useCreateOrderMutation();
+  // ** Marked code ** Start
+  const handleOrder = async (paymentId: string) => {
+    const orderData = {
+      products: products.map(product => ({
+        name: product.name,
+        price: product.price,
+        quantity: product.quantity,
+        imgUrl: product.imgUrl,
+        imgUrlOne: product.imgUrlOne,
+        imgUrlTwo: product.imgUrlTwo,
+        productDetails: product.productDetails,
+      })),
+      paymentID: paymentId,
+      paymentAmount: alto, // Make sure `alto` is correctly calculated
+      userName: userData?.data.userName,
+      userEmail: userData?.data.userEmail,
+      userID: userId,
+      paymentStatus: "Paid", // Update status to "Paid" as needed
+    };
 
+    console.log("Order Data:", orderData); // Logging the order data
+
+    try {
+      const response = await createOrder(orderData).unwrap();
+      console.log("Order created successfully:", response);
+    } catch (error) {
+      console.error("Error creating order:", error);
+    }
+  };
   return (
     <>
       <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">

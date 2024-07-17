@@ -9,6 +9,7 @@ const authSlice = api.injectEndpoints({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["user"],
     }),
     userLogin: builder.mutation({
       query: data => ({
@@ -16,6 +17,7 @@ const authSlice = api.injectEndpoints({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["user"],
     }),
     refreshUser: builder.mutation({
       query: data => ({
@@ -32,6 +34,17 @@ const authSlice = api.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem("access")}`,
         },
       }),
+      providesTags: ["user"],
+    }),
+    getAllUser: builder.query({
+      query: () => ({
+        url: `http://localhost:5000/api/v1/auth/all-user`,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+      }),
+      providesTags: ["user"],
     }),
   }),
 });
@@ -41,4 +54,5 @@ export const {
   useUserLoginMutation,
   useGetSingleUserQuery,
   useRefreshUserMutation,
+  useGetAllUserQuery,
 } = authSlice;

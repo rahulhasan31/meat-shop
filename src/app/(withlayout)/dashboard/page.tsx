@@ -67,11 +67,6 @@ const MyProfile = () => {
                   <a className="text-gray-400 mt-2 hover:text-blue-500" href="">
                     {userData?.data.userEmail}
                   </a>
-                  <p className="mt-2 text-gray-500 text-sm">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s,{" "}
-                  </p>
                 </div>
                 <hr className="mt-6" />
                 <div className="flex  bg-gray-50 ">

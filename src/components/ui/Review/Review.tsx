@@ -299,9 +299,9 @@ ease-in-out">
                             />
                             <p className="text-gray-400 ms-3">
                               <span className="name text-gray-900 capitalize font-bold">
-                                {userData?.data?.userName}
+                                {review?.userName}
                               </span>{" "}
-                              {userData?.data?.userEmail}
+                              {review?.userEmail}
                             </p>
                           </div>
                           <div className="rounded-full w-16 h-16 2xl:w-28 2xl:h-28 bg-gradient-to-r from-[#deb2b280] to-[#deb2b280] absolute inset-0"></div>

@@ -2,33 +2,33 @@ import { api } from "@/redux/api/api";
 
 const authURL = "api/v1/auth";
 const authSlice = api.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     createUser: builder.mutation({
-      query: data => ({
-        url: "http://localhost:5000/api/v1/auth/signup",
+      query: (data) => ({
+        url: "https://meat-server-six.vercel.app/api/v1/auth/signup",
         method: "POST",
         body: data,
       }),
       invalidatesTags: ["user"],
     }),
     userLogin: builder.mutation({
-      query: data => ({
-        url: "http://localhost:5000/api/v1/auth/login",
+      query: (data) => ({
+        url: "https://meat-server-six.vercel.app/api/v1/auth/login",
         method: "POST",
         body: data,
       }),
       invalidatesTags: ["user"],
     }),
     refreshUser: builder.mutation({
-      query: data => ({
-        url: "http://localhost:5000/api/v1/auth/refresh-token",
+      query: (data) => ({
+        url: "https://meat-server-six.vercel.app/api/v1/auth/refresh-token",
         method: "POST",
         body: data,
       }),
     }),
     getSingleUser: builder.query({
-      query: id => ({
-        url: `http://localhost:5000/api/v1/auth/single-user/${id}`,
+      query: (id) => ({
+        url: `https://meat-server-six.vercel.app/api/v1/auth/single-user/${id}`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -38,7 +38,7 @@ const authSlice = api.injectEndpoints({
     }),
     getAllUser: builder.query({
       query: () => ({
-        url: `http://localhost:5000/api/v1/auth/all-user`,
+        url: `https://meat-server-six.vercel.app/api/v1/auth/all-user`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -47,21 +47,20 @@ const authSlice = api.injectEndpoints({
       providesTags: ["user"],
     }),
     UpdateRole: builder.mutation({
-      query: ( data) => ({
-        url: `http://localhost:5000/api/v1/auth/update-role`,
+      query: (data) => ({
+        url: `https://meat-server-six.vercel.app/api/v1/auth/update-role`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("access")}`,
         },
-        method:"PATCH",
-        body:data
+        method: "PATCH",
+        body: data,
       }),
-      invalidatesTags:['user']
-      
+      invalidatesTags: ["user"],
     }),
     deleteUser: builder.mutation({
-      query: id => ({
-        url: `http://localhost:5000/api/v1/auth/user-delete/${id}`,
+      query: (id) => ({
+        url: `https://meat-server-six.vercel.app/api/v1/auth/user-delete/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -80,5 +79,5 @@ export const {
   useRefreshUserMutation,
   useGetAllUserQuery,
   useUpdateRoleMutation,
-  useDeleteUserMutation
+  useDeleteUserMutation,
 } = authSlice;

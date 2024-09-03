@@ -16,7 +16,7 @@ const useRefreshToken = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/auth/refresh-token",
+        "https://meat-server-six.vercel.app/api/v1/auth/refresh-token",
         { token: refresh },
         {
           headers: {

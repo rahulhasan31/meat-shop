@@ -2,10 +2,10 @@ import { api } from "@/redux/api/api";
 
 export const RURL = "api/v1/review";
 const reviewSlice = api.injectEndpoints({
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     createReview: builder.mutation({
-      query: data => ({
-        url: "http://localhost:5000/api/v1/review/create-review",
+      query: (data) => ({
+        url: "https://meat-server-six.vercel.app/api/v1/review/create-review",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -16,8 +16,8 @@ const reviewSlice = api.injectEndpoints({
       invalidatesTags: ["review"],
     }),
     deleteReview: builder.mutation({
-      query: id => ({
-        url: `http://localhost:5000/api/v1/review/review-delete/${id}`,
+      query: (id) => ({
+        url: `https://meat-server-six.vercel.app/api/v1/review/review-delete/${id}`,
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +28,7 @@ const reviewSlice = api.injectEndpoints({
     }),
     updateReview: builder.mutation({
       query: ({ id, data }) => ({
-        url: `http://localhost:5000/api/v1/review/review-update/${id}`,
+        url: `https://meat-server-six.vercel.app/api/v1/review/review-update/${id}`,
 
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const reviewSlice = api.injectEndpoints({
       invalidatesTags: ["review"],
     }),
     getSingleReview: builder.query({
-      query: id => ({
+      query: (id) => ({
         url: `${RURL}//${id}`,
         headers: {
           "Content-Type": "application/json",
@@ -49,8 +49,8 @@ const reviewSlice = api.injectEndpoints({
       }),
     }),
     getReview: builder.query({
-      query: id => ({
-        url: `http://localhost:5000/api/v1/review/get-review/${id}`,
+      query: (id) => ({
+        url: `https://meat-server-six.vercel.app/api/v1/review/get-review/${id}`,
       }),
       providesTags: ["review"],
     }),

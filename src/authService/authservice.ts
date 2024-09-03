@@ -33,7 +33,7 @@ export const getUserInfo = async () => {
       if (refresh) {
         try {
           const response = await fetch(
-            "http://localhost:5000/api/v1/auth/refresh-token",
+            "https://meat-server-six.vercel.app/api/v1/auth/refresh-token",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },

@@ -16,7 +16,7 @@ const OrganicProducts = () => {
         </h1>
         <img
           className="w-32 text-center mx-auto lg:relative lg:-top-10 max-sm:relative max-sm:-top-8"
-          src="https://i.ibb.co/bQQcFnd/153827712-butcher-logo-meat-restaurant-chef-symbol-removebg-preview.png"
+          src="/why1.png"
           alt=""
         />
       </div>
@@ -24,7 +24,7 @@ const OrganicProducts = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto">
           <img
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
-            src="https://themegenix.net/html/bemet/assets/img/product/organic_product01.png"
+            src="/organic_product01.png"
             alt=""
           />
           <div className="flex-1 text-center sm:text-left mb-4 sm:mb-0 sm:ml-4">
@@ -46,7 +46,7 @@ const OrganicProducts = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto">
           <img
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
-            src="https://themegenix.net/html/bemet/assets/img/product/organic_product02.png"
+            src="/inner_product02.png"
             alt=""
           />
           <div className="flex-1 text-center sm:text-left mb-4 sm:mb-0 sm:ml-4">
@@ -68,7 +68,7 @@ const OrganicProducts = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto">
           <img
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
-            src="https://themegenix.net/html/bemet/assets/img/product/organic_product03.png"
+            src="/organic_product03.png"
             alt=""
           />
           <div className="flex-1 text-center sm:text-left mb-4 sm:mb-0 sm:ml-4">
@@ -90,7 +90,7 @@ const OrganicProducts = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto">
           <img
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
-            src="https://themegenix.net/html/bemet/assets/img/product/organic_product04.png"
+            src="/inner_product03.png"
             alt=""
           />
           <div className="flex-1 text-center sm:text-left mb-4 sm:mb-0 sm:ml-4">

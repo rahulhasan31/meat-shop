@@ -1,6 +1,51 @@
-import React from "react";
-
+"use client"
+import { useUpdateRoleMutation,useDeleteUserMutation } from "@/redux/service/auth/authSlice";
+import React, { useEffect } from "react";
+import Swal from "sweetalert2";
 const UserCard = ({ user }: { user: any }) => {
+  const [UpdateRole,{isSuccess}]=useUpdateRoleMutation()
+const [deleteUser,{isSuccess:sucess}]=useDeleteUserMutation()
+  const hanleMakeAdmin=(id:string)=>{
+const data={
+  _id:id,
+  role:"admin"
+}
+UpdateRole(data)
+  }
+
+  const handleDelete=(id:string)=>{
+    deleteUser(id)
+  }
+  useEffect(()=>{
+    const showSuccessAlert = async () => {
+      if (isSuccess) {
+        await Swal.fire({
+          position: 'top',
+          icon: 'success',
+          title: 'Admin Make Success!',
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      }
+    };
+
+    showSuccessAlert();
+  },[isSuccess])
+  useEffect(()=>{
+    const showSuccessAlert = async () => {
+      if (sucess) {
+        await Swal.fire({
+          position: 'top',
+          icon: 'success',
+          title: 'User Deleted Success!',
+          showConfirmButton: false,
+          timer: 1000,
+        });
+      }
+    };
+
+    showSuccessAlert();
+  },[sucess])
   return (
     <>
       <div className="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900">
@@ -19,8 +64,9 @@ const UserCard = ({ user }: { user: any }) => {
           />
         </div>
         <div className="text-center mt-2">
-          <h2 className="font-semibold">{user?.userName}</h2>
-          <p className="text-gray-500">{user?.userEmail}</p>
+          <h2 className="font-semibold">Name : {user?.userName}</h2>
+          <p className="text-gray-500">Email : {user?.userEmail}</p>
+          <p className="text-gray-500">Role : {user?.role}</p>
         </div>
         <ul className="py-4 mt-2 text-gray-700 flex items-center justify-around">
           <li className="flex flex-col items-center justify-around">
@@ -52,12 +98,16 @@ const UserCard = ({ user }: { user: any }) => {
           </li>
         </ul>
         <div className="p-4 border-t mx-8 mt-2 flex ">
-          <button className="w-1/2 me-3 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+          <button onClick={()=>handleDelete(user?._id)} className=" me-3 block mx-auto rounded-full bg-red-500 hover:shadow-lg font-semibold text-white px-6 py-2">
             Delete
           </button>
-          <button className="w-1/2 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">
-            Update
-          </button>
+          {
+            user?.role=="user"?<><button onClick={()=>hanleMakeAdmin(user?._id)} className=" block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">
+            Make Admin
+          </button></>:<><button disabled className=" block mx-auto rounded-full bg-green-600 hover:shadow-lg font-semibold text-white px-6 py-2">
+            Admin
+          </button></>
+          }
         </div>
       </div>
     </>

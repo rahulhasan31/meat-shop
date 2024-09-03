@@ -38,7 +38,7 @@ const MyProfile = () => {
     // Start the token refresh interval
   }, []);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <Spinner/>;
   return (
     <>
       {(isLoggedIn && userRole === "user") || userRole === "admin" ? (

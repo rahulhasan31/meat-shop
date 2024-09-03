@@ -13,7 +13,7 @@ const TwoSection = () => {
             <div className="relative flex-shrink-0">
               <div className="">
                 <img
-                  src="https://i.ibb.co/LY5YDz4/features-img01.png"
+                  src="/inner_product02.png"
                   alt="Sunday Limited Offer"
                   className="w-72 h-72 md:w-72 md:h-72  "
                 />
@@ -39,7 +39,7 @@ const TwoSection = () => {
             <div className="relative flex-shrink-0">
               <div className="">
                 <img
-                  src="https://i.ibb.co/1nqTNxb/product-img02.png"
+                  src="/inner_product04.png"
                   alt="Flash Sale Limited Offer"
                   className="w-72 h-72 md:w-72 md:h-72  transform translate-x-2 translate-y-2 md:translate-x-3 md:translate-y-3 "
                 />

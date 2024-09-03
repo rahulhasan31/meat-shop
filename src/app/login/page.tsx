@@ -33,7 +33,7 @@ interface FetchBaseQueryError {
 const LoginPage: React.FC = () => {
   const [userLogin, { isSuccess, data, isError, error }] =
     useUserLoginMutation();
-  console.log("data", data);
+  // console.log("error", error);
   const { login } = useAuth();
   const {
     register,

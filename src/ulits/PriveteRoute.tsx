@@ -5,12 +5,10 @@ import { useAuth } from "@/authService/authContext";
 const useAuthCheck = () => {
   const { isLoggedIn, userRole } = useAuth();
   const router = useRouter();
-
-  useEffect(() => {
-    if (!(isLoggedIn && (userRole === "user" || userRole === "admin"))) {
-      router.push("/");
-    }
-  }, [isLoggedIn, userRole, router]);
+  if (!(isLoggedIn && (userRole === "user" || userRole === "admin"))) {
+    router.push("/");
+  }
+  
 
   return { isLoggedIn, userRole };
 };

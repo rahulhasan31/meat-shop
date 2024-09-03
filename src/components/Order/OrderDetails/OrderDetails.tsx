@@ -2,12 +2,23 @@
 
 import Spinner from "@/components/ui/Spinner/Spinner";
 import { useGetSingleUserQuery } from "@/redux/service/auth/authSlice";
+import { useGetUserOrderQuery, useUpdateOrderStatusMutation } from "@/redux/service/order/orderSlice";
 import useUserInfo from "@/ulits/useUserInfoHook";
 
 const OrderDetails = ({ order }: { order: any }) => {
+  console.log("order Id", order._id);
+  
   const { userInfo, loading, error } = useUserInfo();
   const { data, isLoading } = useGetSingleUserQuery(userInfo?.id);
+  const [UpdateOrderStatus,{isSuccess:OrderStatus}]=useUpdateOrderStatusMutation()
+  
+  const { data:OrderData, isLoading:orderLoading } = useGetUserOrderQuery(userInfo?.id);
+  console.log("order Data",data?.data);
+  
+  const handlemakeStutas=(id:string)=>{
 
+  }
+  
   if (isLoading && loading) return <Spinner />;
   return (
     <>
@@ -104,10 +115,37 @@ const OrderDetails = ({ order }: { order: any }) => {
                         src="https://i.ibb.co/L8KSdNQ/image-3.png"
                       />
                     </div>
-                    <div className="flex flex-col justify-start items-center">
+                    {
+                      order?.paymentStatus=="pending"?<> <div className="flex flex-col justify-start items-center">
                       <p className="text-xl text-green-400">
+                      Review
+                      </p>
+                    </div></>:<>
+                      <div className="flex flex-col justify-start items-center">
+                      <p className="text-xl text-green-400">
+                      Paid
+                      </p>
+                    </div></>
+                    }
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold leading-5 text-gray-800">
+                  Order Status
+                </h3>
+                <div className="flex justify-between items-start w-full">
+                  <div className="flex justify-center items-center space-x-4">
+                    <div className="w-8 h-8">
+                      <img
+                        className="w-full h-full"
+                        alt="logo"
+                        src="https://i.ibb.co/L8KSdNQ/image-3.png"
+                      />
+                    </div>
+                    <div className="flex flex-col justify-start items-center">
+                      <p className="text-xl text-red-600">
                         {order?.paymentStatus}
                       </p>
+                      
                     </div>
                   </div>
                 </div>

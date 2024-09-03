@@ -16,7 +16,7 @@ const OurOrganic = () => {
         </h1>
         <img
           className="w-32 text-center mx-auto lg:relative lg:-top-10 max-sm:relative max-sm:-top-8"
-          src="https://i.ibb.co/bQQcFnd/153827712-butcher-logo-meat-restaurant-chef-symbol-removebg-preview.png"
+          src="/why1.png"
           alt=""
         />
       </div>
@@ -24,7 +24,7 @@ const OurOrganic = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
             <img
-              src="https://i.ibb.co/99GtLN0/product-img03.png"
+              src="/product_img03.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "
             />
@@ -42,7 +42,7 @@ const OurOrganic = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
             <img
-              src="https://i.ibb.co/1nqTNxb/product-img02.png"
+              src="/inner_product04.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "
             />
@@ -60,7 +60,7 @@ const OurOrganic = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
             <img
-              src="https://i.ibb.co/LY5YDz4/features-img01.png"
+              src="/inner_product02.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "
             />

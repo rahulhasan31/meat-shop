@@ -46,6 +46,30 @@ const authSlice = api.injectEndpoints({
       }),
       providesTags: ["user"],
     }),
+    UpdateRole: builder.mutation({
+      query: ( data) => ({
+        url: `http://localhost:5000/api/v1/auth/update-role`,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+        method:"PATCH",
+        body:data
+      }),
+      invalidatesTags:['user']
+      
+    }),
+    deleteUser: builder.mutation({
+      query: id => ({
+        url: `http://localhost:5000/api/v1/auth/user-delete/${id}`,
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("access")}`,
+        },
+      }),
+      invalidatesTags: ["user"],
+    }),
   }),
 });
 
@@ -55,4 +79,6 @@ export const {
   useGetSingleUserQuery,
   useRefreshUserMutation,
   useGetAllUserQuery,
+  useUpdateRoleMutation,
+  useDeleteUserMutation
 } = authSlice;

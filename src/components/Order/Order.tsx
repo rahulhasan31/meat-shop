@@ -8,7 +8,7 @@ import OrderDetails from "./OrderDetails/OrderDetails";
 const Order = () => {
   const { userInfo, loading, error } = useUserInfo();
   const { data, isLoading } = useGetUserOrderQuery(userInfo?.id);
-  console.log(data?.data);
+  console.log("order Data",data?.data);
 
   if (isLoading && loading) return <Spinner />;
   return (

@@ -12,7 +12,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import Swal from "sweetalert2";
 import { getUserInfo } from "@/authService/authservice";
 import { useGetSingleUserQuery } from "@/redux/service/auth/authSlice";
-import { useCreateOrderMutation } from "@/redux/service/order/orderSlice";
+import { useCreateOrderMutation, useUpdateOrderStatusMutation } from "@/redux/service/order/orderSlice";
 
 const stripePromise = loadStripe(
   "pk_test_51M6YTaIOaRhLiCR9IUacPMWr7kIOpNT2oEv4gm3lLOoRyLZ0sQplaW3fiYroKVA63hTjrAq5homSPjhn01lr0z36007McI12l5"
@@ -27,7 +27,7 @@ const Checkout = () => {
   const [clientSecret, setClientSecret] = useState<string | null>("");
 
   const { products } = useAppSelector(state => state.cart);
-  console.log("products", products[0].name);
+  console.log("products", products[0]?.name);
 
   const savedTotal: any | null = localStorage.getItem("total");
 
@@ -144,10 +144,10 @@ const Checkout = () => {
     // Start the token refresh interval
   }, []);
 
-  const { data: userData } = useGetSingleUserQuery(userId);
+  const { data: userData, isLoading } = useGetSingleUserQuery(userId);
   console.log("userData", userData);
   const [createOrder, { error, isSuccess }] = useCreateOrderMutation();
-  // ** Marked code ** Start
+
   const handleOrder = async (paymentId: string) => {
     const orderData = {
       products: products.map(product => ({
@@ -164,7 +164,7 @@ const Checkout = () => {
       userName: userData?.data.userName,
       userEmail: userData?.data.userEmail,
       userID: userId,
-      paymentStatus: "Paid", // Update status to "Paid" as needed
+      paymentStatus: "Pending", // Update status to "Paid" as needed
     };
 
     console.log("Order Data:", orderData); // Logging the order data
@@ -184,11 +184,13 @@ const Checkout = () => {
           <p className="text-gray-400">
             Check your items. And select a suitable shipping method.
           </p>
-          <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
-            {products?.map(product => (
-              <CheckoutCard key={product?._id} product={product} />
-            ))}
-          </div>
+        {
+          isLoading?<><p>loading..</p></>:<>  <div className="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
+          {products?.map(product => (
+            <CheckoutCard key={product?._id} product={product} />
+          ))}
+        </div></>
+        }
         </div>
         <form onSubmit={handleSubmit}>
           <div className="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">

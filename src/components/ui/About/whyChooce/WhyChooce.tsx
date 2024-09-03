@@ -16,8 +16,8 @@ const WhyChooce = () => {
         </h1>
         <img
           className="w-32 text-center mx-auto lg:relative lg:-top-10 max-sm:relative max-sm:-top-8"
-          src="https://i.ibb.co/bQQcFnd/153827712-butcher-logo-meat-restaurant-chef-symbol-removebg-preview.png"
-          alt=""
+          src="/why1.png"
+          
         />
       </div>
       <div
@@ -26,7 +26,7 @@ const WhyChooce = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-1  z-10">
             <img
-              src="https://i.ibb.co/T4kHBqn/images-removebg-preview.png"
+              src="/ab3.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-40 lg:h-40  max-sm:w-40 "
             />
@@ -47,7 +47,7 @@ const WhyChooce = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-1  z-10">
             <img
-              src="https://i.ibb.co/cvKtrrQ/images-removebg-preview-1.png"
+              src="/ab2.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-40 lg:h-40  max-sm:w-40 "
             />
@@ -68,7 +68,7 @@ const WhyChooce = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-1  z-10">
             <img
-              src="https://i.ibb.co/wwcHLHn/images-1-removebg-preview.png"
+              src="/ab1.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-40 lg:h-40  max-sm:w-40 "
             />

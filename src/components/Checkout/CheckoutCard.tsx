@@ -1,6 +1,11 @@
+"use client"
 import React from "react";
 
 const CheckoutCard = ({ product }: { product: any }) => {
+console.log("product");
+
+  
+  
   return (
     <>
       <div className="flex flex-col rounded-lg bg-white sm:flex-row">

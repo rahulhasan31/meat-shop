@@ -32,16 +32,16 @@ const TowSlider = () => {
         }}
         className="custom-swiper">
         <SwiperSlide>
-          <img src="https://i.ibb.co/5MXpv0s/gallery-img03.png" alt="" />
+          <img src="/gallery_img03.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://i.ibb.co/JqLZ2CG/gallery-img02.png" alt="" />
+          <img src="/bg-img.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://i.ibb.co/cynYx1n/product-img02.png" alt="" />
+          <img src="/product_img02.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://i.ibb.co/5MXpv0s/gallery-img03.png" alt="" />
+          <img src="/gallery_img03.png" alt="" />
         </SwiperSlide>
       </Swiper>
     </>

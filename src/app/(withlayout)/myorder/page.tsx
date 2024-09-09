@@ -8,13 +8,20 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const MyOrder = () => {
+  const router = useRouter();
   const { isLoggedIn, logout, userRole } = useAuth();
 
   // if (!isLoggedIn) return <Spinner />;
   return (
     <>
       <>
-        {isLoggedIn && userRole === "user" || userRole === "admin" ? <Order /> : <Spinner />}
+        {(isLoggedIn && userRole === "user") || userRole === "admin" ? (
+          <Order />
+        ) : (
+          <>
+            <Spinner /> && {router.push("/")}
+          </>
+        )}
       </>
     </>
   );

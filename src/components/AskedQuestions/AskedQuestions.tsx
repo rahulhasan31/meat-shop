@@ -8,9 +8,10 @@ const AskedQuestions = () => {
     <div>
       <div
         style={{
-          backgroundColor: "#f0ede8",
+          backgroundColor: "#180905",
         }}
-        className="">
+        className=""
+      >
         <section>
           <div className="w-full relative pb-10 px-6 xl:px-0">
             <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
@@ -27,7 +28,7 @@ const AskedQuestions = () => {
                 <p className="text-red-600 uppercase text-2xl mb-4 font-mono">
                   Customer Quotes
                 </p>
-                <h1 className="text-black text-4xl lg:text-6xl font-black mb-8">
+                <h1 className="text-white text-4xl lg:text-6xl font-black mb-8">
                   Frequently Asked{" "}
                   <span className="text-red-600">Questions</span>
                 </h1>
@@ -38,14 +39,16 @@ const AskedQuestions = () => {
                       key="1"
                       aria-label="Accordion 1"
                       title="HAMBURG MEAT IS ANIMAL FLESH FOOD.
-                      ">
+                      "
+                    >
                       {defaultContent}
                     </AccordionItem>
                     <AccordionItem
                       className="font-bold"
                       key="2"
                       aria-label="Accordion 2"
-                      title="REVOLUTION ALLOWED THE OF ANIMALS">
+                      title="REVOLUTION ALLOWED THE OF ANIMALS"
+                    >
                       {defaultContent}
                     </AccordionItem>
                     <AccordionItem
@@ -53,7 +56,8 @@ const AskedQuestions = () => {
                       key="3"
                       aria-label="Accordion 3"
                       title="MEAT IS ANIMAL FLESH
-                      FOOD.">
+                      FOOD."
+                    >
                       {defaultContent}
                     </AccordionItem>
                   </Accordion>

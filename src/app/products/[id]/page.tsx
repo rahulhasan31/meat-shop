@@ -139,7 +139,12 @@ const SinglePage = ({ params }: any) => {
       {isLoading ? (
         <Spinner />
       ) : (
-        <Row className="lg:mt-10 max-sm:mt-3">
+        <Row
+          style={{
+            background: "#180905",
+          }}
+          className="text-white p-5 "
+        >
           <Col xs={24} sm={24} md={12} lg={12}>
             <div className="  lg:ps-4 lg:pe-4  max-sm:p-4">
               <div className="image-container">
@@ -188,7 +193,8 @@ const SinglePage = ({ params }: any) => {
                 style={{
                   backgroundColor: "#f7f4ef",
                 }}
-                className="flex  gap-5 lg:w-8/12 items-center justify-center  rounded-xl p-5  border-red-600 shadow-md mt-3 lg:mt-8">
+                className="flex  gap-5 lg:w-8/12 items-center justify-center  rounded-xl p-5  border-red-600 shadow-md mt-3 lg:mt-8"
+              >
                 <p className="text-xl font-bold font-mono text-red-600">
                   {countDownTime.days} days
                 </p>
@@ -203,7 +209,7 @@ const SinglePage = ({ params }: any) => {
                 </p>
               </div>
               <div className="lg:mt-8 max-sm:mt-3">
-                <p className="text-gray-700 text-md font-semibold lg:text-xl">
+                <p className="text-white text-md font-semibold lg:text-xl">
                   Meat provide well shaped fresh and the organic meat well
                   animals Fresh And Halal Beef
                 </p>
@@ -224,8 +230,11 @@ const SinglePage = ({ params }: any) => {
                   </div>
                   <div className="w-full lg:w-auto">
                     <button
-                      style={{ backgroundColor: "#f7f4ef" }}
-                      className="w-full lg:px-48 py-4 font-bold text-md hover:bg-red-600 transition-colors duration-300">
+                      style={{
+                        background: "#441f16",
+                      }}
+                      className="w-full lg:px-48 py-4 font-bold text-md hover:bg-red-600 transition-colors duration-300"
+                    >
                       PURCHASE
                     </button>
                   </div>
@@ -235,9 +244,10 @@ const SinglePage = ({ params }: any) => {
                 <button
                   onClick={() => handleAddToCart(data?.data)}
                   style={{
-                    backgroundColor: "#2a1510",
+                    background: "#441f16",
                   }}
-                  className="w-full text-white text-xl font-bold py-4 ">
+                  className="w-full text-white text-xl font-bold py-4 "
+                >
                   Add To Cart{" "}
                 </button>
               </div>

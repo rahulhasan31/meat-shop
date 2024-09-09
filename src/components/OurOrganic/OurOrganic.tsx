@@ -4,10 +4,11 @@ const OurOrganic = () => {
   return (
     <section
       style={{
-        backgroundColor: "#F2EEEB",
+        background: "#180905",
       }}
-      className="bg-gray-100 p-4 md:p-8  ">
-      <div className="p-5 ">
+      className="bg-gray-100 p-4 md:p-8  "
+    >
+      <div className="p-5 text-white">
         <p className="text-center shop text-red-500 font-bold text-2xl">
           Organic Shop
         </p>
@@ -29,7 +30,12 @@ const OurOrganic = () => {
               className="object-cover lg:w-ful lg:h-80 "
             />
           </div>
-          <div className="bg-white rounded-lg  shadow-md overflow-hidden p-6 text-center h-80 relative box mt-16 rounded-b-lg">
+          <div
+            style={{
+              background: "#441f16",
+            }}
+            className="text-white rounded-lg  shadow-md overflow-hidden p-6 text-center h-80 relative box mt-16 rounded-b-lg"
+          >
             <div className="mt-16  relative lg:top-24 max-sm:top-20">
               <h2 className="text-xl font-bold mt-4">STACK MEATS</h2>
               <p className="text-lg font-semibold mt-2">$6.99</p>
@@ -47,7 +53,12 @@ const OurOrganic = () => {
               className="object-cover lg:w-ful lg:h-80 "
             />
           </div>
-          <div className="bg-white rounded-lg shadow-md overflow-hidden p-6 text-center h-80 relative box mt-16 rounded-b-lg">
+          <div
+            style={{
+              background: "#441f16",
+            }}
+            className="text-white rounded-lg shadow-md overflow-hidden p-6 text-center h-80 relative box mt-16 rounded-b-lg"
+          >
             <div className="mt-16  relative lg:top-28 max-sm:top-28">
               <h2 className="text-xl font-bold mt-4">ROAST CHICKEN</h2>
               <p className="text-lg font-semibold mt-2">$7.99</p>
@@ -60,12 +71,17 @@ const OurOrganic = () => {
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
             <img
-              src="/inner_product02.png"
+              src="/product03.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "
             />
           </div>
-          <div className="bg-white rounded-lg shadow-md overflow-hidden p-6 text-center h-80 relative box mt-16 rounded-b-lg">
+          <div
+            style={{
+              background: "#441f16",
+            }}
+            className="text-white rounded-lg shadow-md overflow-hidden p-6 text-center h-80 relative box mt-16 rounded-b-lg"
+          >
             <div className="mt-16  relative lg:top-24 max-sm:top-20">
               <h2 className="text-xl font-bold mt-4">HAMBURG MEAT</h2>
               <p className="text-lg font-semibold mt-2">$6.99</p>

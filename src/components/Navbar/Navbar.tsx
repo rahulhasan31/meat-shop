@@ -23,7 +23,7 @@ import { useAuth } from "@/authService/authContext";
 const NavbarPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [clientProductsCount, setClientProductsCount] = useState(0);
-  const { products } = useAppSelector(state => state.cart);
+  const { products } = useAppSelector((state) => state.cart);
 
   useEffect(() => {
     setClientProductsCount(products.length);
@@ -33,16 +33,22 @@ const NavbarPage = () => {
 
   return (
     <>
-      <Navbar className="py-4 " onMenuOpenChange={setIsMenuOpen}>
+      <Navbar
+        style={{
+          background: "#180905",
+        }}
+        className="py-4 "
+        onMenuOpenChange={setIsMenuOpen}
+      >
         <NavbarContent>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
+            className="sm:hidden text-white"
           />
           <NavbarBrand>
             <div className="flex items-center space-x-2 md:space-x-4">
               <img
-                src="https://i.ibb.co/PY0sKgH/logo.png"
+                src="/logo.png"
                 alt="Logo"
                 className="h-8 w-28 md:h-10 md:w-56"
               />
@@ -52,46 +58,52 @@ const NavbarPage = () => {
 
         <NavbarContent
           className="hidden sm:flex gap-4 lg:font-bold"
-          justify="center">
+          justify="center"
+        >
           <NavbarItem>
-            <Link color="foreground" href="/">
+            <Link className="text-white" color="foreground" href="/">
               HOME
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="/products" aria-current="page">
+            <Link className="text-white" href="/products">
               PRODUCTS
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/about">
+            <Link className="text-white" color="foreground" href="/about">
               ABOUT US
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="blog">
+            <Link className="text-white" color="foreground" href="/blog">
               BLOG
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/service-page">
+            <Link
+              className="text-white"
+              color="foreground"
+              href="/service-page"
+            >
               PAGES
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="contact">
+            <Link className="text-white" color="foreground" href="/contact">
               CONTACT
             </Link>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
-          <NavbarItem className="me-3">
+          <NavbarItem className="lg:me-3 ">
             <Button
-              color="success"
+              color="danger"
               as={Link}
               href="/cart"
               variant="shadow"
-              className="px-5 py-2 bg-red-600 text-white rounded-full">
+              className=" bg-red-600 text-white rounded-full "
+            >
               <FaCartArrowDown className="text-xl" />
             </Button>
             <p className="absolute -top-2  ms-12 bg-red-600 text-white px-3 py-1 rounded-full ">
@@ -102,20 +114,24 @@ const NavbarPage = () => {
             <>
               <NavbarItem>
                 <Button
-                  className=" text-white rounded-full"
+                  className="   bg-red-600 text-white px-3 py-1 rounded-full"
                   color="success"
                   as={Link}
                   href="/dashboard"
-                  variant="shadow">
+                  variant="shadow"
+                >
                   Dashboard
                 </Button>
               </NavbarItem>
               <NavbarItem className=" lg:flex">
                 <Button
                   onClick={logout}
-                  className="rounded-full"
+                  as={Link}
+                  className=" bg-red-600 text-white rounded-full "
                   color="danger"
-                  variant="shadow">
+                  href="/"
+                  variant="shadow"
+                >
                   Logout
                 </Button>
               </NavbarItem>
@@ -124,66 +140,89 @@ const NavbarPage = () => {
             <>
               <NavbarItem className=" lg:flex">
                 <Button
-                  className="px-5"
+                  className="px-5  bg-red-600 text-white  py-1 rounded-full  max-sm:hidden"
                   color="danger"
                   as={Link}
                   href="/login"
-                  variant="shadow">
+                  variant="shadow"
+                >
                   Login
                 </Button>
               </NavbarItem>
               <NavbarItem>
                 <Button
-                  className="px-5"
+                  className="px-5  bg-red-600 text-white  py-1 rounded-full max-sm:hidden"
                   color="danger"
                   as={Link}
                   href="/signup"
-                  variant="shadow">
+                  variant="shadow"
+                >
                   Sign Up
                 </Button>
               </NavbarItem>
             </>
           )}
         </NavbarContent>
-        <NavbarMenu>
-          <NavbarMenuItem>
-            <div className="max-sm:mt-20 text-center bg-red-600 py-3 rounded-3xl ">
-              {" "}
+        <NavbarMenu className="text-white">
+          <NavbarMenuItem className="text-white">
+            <NavbarItem className="mt-10">
               <Link
-                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
+                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
                 href="/"
-                size="lg">
-                Home
+                size="lg"
+              >
+                <button className="text-center text-white text-2xl">
+                  Home
+                </button>
               </Link>
-            </div>
-            <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
-              {" "}
-              <Link
-                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
-                href="/products"
-                size="lg">
-                Products
-              </Link>
-            </div>
+            </NavbarItem>
 
-            <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
-              {" "}
+            <NavbarItem>
               <Link
-                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
-                href="/products/736"
-                size="lg">
-                Products Details
+                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                href="/products"
+                size="lg"
+              >
+                <button className="text-center text-white text-2xl">
+                  Products
+                </button>
               </Link>
-            </div>
-            <div className="max-sm:mt-5 text-center bg-red-600 py-3 rounded-3xl ">
-              {" "}
+            </NavbarItem>
+
+            <NavbarItem>
               <Link
-                className="  text-center text-white max-sm:text-2xl max-sm:font-bold"
+                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                href="/blog"
+                size="lg"
+              >
+                <button className="text-center text-white text-2xl">
+                  Blog
+                </button>
+              </Link>
+            </NavbarItem>
+
+            <NavbarItem>
+              <Link
+                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
                 href="/about"
-                size="lg">
-                About Us
+                size="lg"
+              >
+                <button className="text-center text-white text-2xl">
+                  About Us
+                </button>
               </Link>
-            </div>
+            </NavbarItem>
+            <NavbarItem>
+              <Link
+                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                href="/signup"
+                size="lg"
+              >
+                <button className="text-center text-white text-2xl">
+                  Sign Up
+                </button>
+              </Link>
+            </NavbarItem>
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>

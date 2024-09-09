@@ -40,12 +40,13 @@ const ProductCard = ({ product }: { product: any }) => {
       </Link>
       <div
         style={{
-          backgroundColor: "#f1ece3",
+          background: "#441f16",
         }}
-        className="box rounded-lg shadow-md overflow-hidden p-6 text-center h-96 relative   rounded-b-lg max-sm:h-96 ">
+        className="box text-white rounded-lg shadow-md overflow-hidden p-6 text-center h-96 relative   rounded-b-lg max-sm:h-96 "
+      >
         <div className="lg:mt-16 relative lg:top-24 max-sm:top-20 max-sm:mt-16">
           <div className="flex relative -top-44  items-center  max-sm:-top-40 ">
-            <h1 className="font-bold me-2 text-black">NEW</h1>
+            <h1 className="font-bold me-2 text-white">NEW</h1>
             <p>
               <IoIosStar className="text-red-600 " />
             </p>
@@ -53,11 +54,12 @@ const ProductCard = ({ product }: { product: any }) => {
           <p className="text-red-600 font-bold uppercase text-sm mt-2">
             GORGANIC
           </p>
-          <h2 className="text-xl font-bold mt-4 text-black">{product?.name}</h2>
-          <p className="text-lg font-bold mt-2 text-black">${product?.price}</p>
+          <h2 className="text-xl font-bold mt-4 text-white">{product?.name}</h2>
+          <p className="text-lg font-bold mt-2 text-white">${product?.price}</p>
           <button
             onClick={() => handleAddToCart(product)}
-            className="font-bold text-lg">
+            className="font-bold text-lg"
+          >
             <div className="lg:flex lg:justify-center lg:items-center bg-white lg:px-3 lg:py-3 lg:w-40 lg:mx-auto rounded-full gap-5 lg:mt-3 max-sm:flex max-sm:w-40 max-sm:justify-center max-sm:mx-auto max-sm:py-3 max-sm:mt-2 ">
               <FaCartArrowDown className="text-red-600" />
             </div>

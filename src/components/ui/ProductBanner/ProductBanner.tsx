@@ -13,11 +13,11 @@ const ProductBanner = () => {
         </h1>
       </div>
       <div className="relative d flex justify-center items-center">
-        <p className="relative h max-sm:text-2xl">Home</p>
+        <p className="relative h max-sm:text-2xl">Meat</p>
         <p className="relative h max-sm:text-2xl">
           <FaGripLinesVertical className="text-white text-3xl" />
         </p>
-        <p className="relative h max-sm:text-2xl">Our Shop</p>
+        <p className="relative h max-sm:text-2xl">Shop</p>
       </div>
     </div>
   );

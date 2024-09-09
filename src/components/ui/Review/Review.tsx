@@ -57,7 +57,7 @@ const Review = () => {
 
   useEffect(() => {
     if (isError && isError.status === 401) {
-      refreshTokenMake().then(decoded => {
+      refreshTokenMake().then((decoded) => {
         if (decoded) {
           console.log("Token refreshed and decoded:", decoded);
           // Handle the successful refresh, e.g., update user state
@@ -101,7 +101,7 @@ const Review = () => {
   } = useForm<Inputs>();
 
   const [createReview, { isSuccess, error }] = useCreateReviewMutation();
-  const onSubmit: SubmitHandler<Inputs> = data => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     const review = {
       productID: id,
       review: data?.review,
@@ -132,7 +132,7 @@ const Review = () => {
     deleteReview(id);
     setIsError(deleteErr);
   };
-  
+
   useEffect(() => {
     if (isSuccess) {
       reset();
@@ -173,7 +173,12 @@ const Review = () => {
   }
 
   return (
-    <div className="flex w-full flex-col lg:p-4 lg:rounded-none">
+    <div
+      style={{
+        background: "#180905",
+      }}
+      className="flex w-full flex-col lg:p-4 lg:rounded-none"
+    >
       <Tabs aria-label="Options">
         <Tab key="review" title="REVIEWS">
           <Divider className="my-" />
@@ -181,10 +186,11 @@ const Review = () => {
           <Card className="lg:h-auto">
             <CardBody
               style={{
-                backgroundColor: "#F1ECE2",
+                background: "#180905",
               }}
-              className="lg:p-5">
-              <p className="font-medium text-slate-900 text-2xl ">
+              className="lg:p-5"
+            >
+              <p className="font-medium text-white text-2xl ">
                 {" "}
                 Customer Reviews ({data?.data.length})
               </p>
@@ -211,7 +217,8 @@ const Review = () => {
   m-0
   focus:bg-white focus:border-blue-600 focus:outline-none
 "
-                        placeholder="Message"></textarea>
+                        placeholder="Message"
+                      ></textarea>
                     </div>
 
                     <button
@@ -222,7 +229,8 @@ px-6
 py-2.5
 
 btn btn-success bg-gradient-to-r from-success to-success text-white
-ease-in-out">
+ease-in-out"
+                    >
                       Send
                     </button>
                   </form>
@@ -233,17 +241,23 @@ ease-in-out">
                 <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 col-span-6">
                   {data?.data.map((review: any) => (
                     <div
+                      style={{
+                        background: "#441f16",
+                      }}
                       key={review._id}
-                      className="relative z-10 bg-white  rounded-sm flex flex-col lg:items-center justify-between lg:flex-row gap-10 p-7">
+                      className="relative z-10  rounded-sm flex flex-col lg:items-center justify-between lg:flex-row gap-10 p-7"
+                    >
                       <div>
                         <svg
+                          className="text-white "
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 475.082 475.081"
                           x="0px"
                           y="0px"
                           width="25px"
                           height="25px"
-                          version="1.1">
+                          version="1.1"
+                        >
                           <g>
                             <g>
                               <path d="M 164.45 219.27 h -63.954 c -7.614 0 -14.087 -2.664 -19.417 -7.994 c -5.327 -5.33 -7.994 -11.801 -7.994 -19.417 v -9.132 c 0 -20.177 7.139 -37.401 21.416 -51.678 c 14.276 -14.272 31.503 -21.411 51.678 -21.411 h 18.271 c 4.948 0 9.229 -1.809 12.847 -5.424 c 3.616 -3.617 5.424 -7.898 5.424 -12.847 V 54.819 c 0 -4.948 -1.809 -9.233 -5.424 -12.85 c -3.617 -3.612 -7.898 -5.424 -12.847 -5.424 h -18.271 c -19.797 0 -38.684 3.858 -56.673 11.563 c -17.987 7.71 -33.545 18.132 -46.68 31.267 c -13.134 13.129 -23.553 28.688 -31.262 46.677 C 3.855 144.039 0 162.931 0 182.726 v 200.991 c 0 15.235 5.327 28.171 15.986 38.834 c 10.66 10.657 23.606 15.985 38.832 15.985 h 109.639 c 15.225 0 28.167 -5.328 38.828 -15.985 c 10.657 -10.663 15.987 -23.599 15.987 -38.834 V 274.088 c 0 -15.232 -5.33 -28.168 -15.994 -38.832 C 192.622 224.6 179.675 219.27 164.45 219.27 Z" />
@@ -262,8 +276,8 @@ ease-in-out">
                               alt="Timothy Quano"
                               className="rounded-full w-16 h-16 object-cover 2xl:w-28 2xl:h-28"
                             />
-                            <p className="text-gray-400 ms-3">
-                              <span className="name text-gray-900 capitalize font-bold">
+                            <p className="text-white ms-3">
+                              <span className="name text-white capitalize font-bold">
                                 {review?.userName}
                               </span>{" "}
                               {review?.userEmail}
@@ -277,14 +291,16 @@ ease-in-out">
                                   onClick={() => setIsId(review._id)}
                                   color="success"
                                   className="me-2 text-white rounded-full"
-                                  onPress={onOpen}>
+                                  onPress={onOpen}
+                                >
                                   Edit
                                 </Button>
 
                                 <Button
                                   className="rounded-3xl"
                                   onClick={() => handleDelete(review._id)}
-                                  color="danger">
+                                  color="danger"
+                                >
                                   Delete
                                 </Button>
                               </>
@@ -309,7 +325,8 @@ ease-in-out">
               style={{
                 backgroundColor: "#F1ECE2",
               }}
-              className="lg:p-4">
+              className="lg:p-4"
+            >
               <p className="font-medium text-slate-900">
                 {" "}
                 committed are products that have been produced using sustainable
@@ -338,7 +355,7 @@ ease-in-out">
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
-          {onClose => (
+          {(onClose) => (
             <>
               <ModalHeader className="flex flex-col gap-1">
                 Modal Title
@@ -366,7 +383,8 @@ ease-in-out">
   m-0
   focus:bg-white focus:border-blue-600 focus:outline-none
 "
-                      placeholder="Message"></textarea>
+                      placeholder="Message"
+                    ></textarea>
                   </div>
                 </ModalBody>
 

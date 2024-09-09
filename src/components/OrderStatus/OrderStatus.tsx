@@ -3,12 +3,12 @@ import {
   useGetAllOrderQuery,
   useUpdateOrderStatusMutation,
 } from "@/redux/service/order/orderSlice";
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { Button, ButtonGroup, Spinner } from "@nextui-org/react";
 import React, { useEffect } from "react";
 import Swal from "sweetalert2";
 
 const OrderStatus = () => {
-  const { data } = useGetAllOrderQuery(undefined);
+  const { data, isLoading } = useGetAllOrderQuery(undefined);
   const [UpdateOrderStatus, { isSuccess }] = useUpdateOrderStatusMutation();
   const handleMakeStatus = (id: string) => {
     console.log(id);
@@ -34,6 +34,8 @@ const OrderStatus = () => {
 
     showSuccessAlert();
   }, [isSuccess]);
+
+  if (isLoading) return <Spinner />;
   return (
     <div>
       <section className="py-24 relative">
@@ -112,7 +114,7 @@ const OrderStatus = () => {
                                   <p className="font-medium text-sm leading-7 text-black">
                                     Review
                                   </p>
-                                  {order?.paymentStatus == "pending" ? (
+                                  {order?.paymentStatus == "Pending" ? (
                                     <>
                                       <button
                                         onClick={() =>

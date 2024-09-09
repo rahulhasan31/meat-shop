@@ -3,10 +3,11 @@ import React from "react";
 const BlogSection = () => {
   return (
     <div
-      className="pb-7"
+      className="pb-7 text-white"
       style={{
-        backgroundColor: "#efe8d9",
-      }}>
+        backgroundColor: "#180905 ",
+      }}
+    >
       <div className="lg:top-14 lg:relative max-sm:relative max-sm:top-10">
         <p className="text-center shop text-red-500 font-bold text-2xl">
           Latest News
@@ -22,7 +23,12 @@ const BlogSection = () => {
       </div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-2">
         <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
-          <div className="overflow-hidden transition-shadow duration-300 bg-white rounded-xl p-4">
+          <div
+            style={{
+              background: "#441f16",
+            }}
+            className="overflow-hidden transition-shadow duration-300 bg-white rounded-xl p-4"
+          >
             <a href="/" aria-label="Article">
               <img
                 src="https://themegenix.net/html/bemet/assets/img/blog/blog_post01.jpg"
@@ -31,18 +37,19 @@ const BlogSection = () => {
               />
             </a>
             <div className="py-5">
-              <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
+              <p className="mb-2 text-xs font-semibold text-white uppercase">
                 13 Jul 2020
               </p>
               <a
                 href="/"
                 aria-label="Article"
-                className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700">
+                className="inline-block mb-3 text-white transition-colors duration-200 hover:text-deep-purple-accent-700"
+              >
                 <p className="text-2xl font-bold leading-5">
                   Hamburg Meat is Animal Flesh Food
                 </p>
               </a>
-              <p className="mb-4 text-gray-700">
+              <p className="mb-4 text-white">
                 Sed ut perspiciatis unde omnis iste natus error sit sed quia
                 consequuntur magni voluptatem doloremque.
               </p>
@@ -50,7 +57,8 @@ const BlogSection = () => {
                 <a
                   href="/"
                   aria-label="Likes"
-                  className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group">
+                  className="flex items-start text-white transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+                >
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +69,8 @@ const BlogSection = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700">
+                      className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                    >
                       <polyline
                         points="6 23 1 23 1 12 6 12"
                         fill="none"
@@ -80,7 +89,8 @@ const BlogSection = () => {
                 <a
                   href="/"
                   aria-label="Comments"
-                  className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group">
+                  className="flex items-start text-white transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+                >
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +101,8 @@ const BlogSection = () => {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       stroke="currentColor"
-                      className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700">
+                      className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                    >
                       <polyline
                         points="23 5 23 18 19 18 19 22 13 18 12 18"
                         fill="none"
@@ -110,7 +121,12 @@ const BlogSection = () => {
               </div>
             </div>
           </div>
-          <div className="overflow-hidden transition-shadow duration-300 bg-white  rounded-xl p-4">
+          <div
+            style={{
+              background: "#441f16",
+            }}
+            className="overflow-hidden transition-shadow duration-300   rounded-xl p-4"
+          >
             <a href="/" aria-label="Article">
               <img
                 src="https://themegenix.net/html/bemet/assets/img/blog/blog_post02.jpg"
@@ -119,18 +135,19 @@ const BlogSection = () => {
               />
             </a>
             <div className="py-5">
-              <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
+              <p className="mb-2 text-xs font-semibold text-white uppercase">
                 4 Nov 2020
               </p>
               <a
                 href="/"
                 aria-label="Article"
-                className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700">
+                className="inline-block mb-3 text-white transition-colors duration-200 hover:text-deep-purple-accent-700"
+              >
                 <p className="text-2xl font-bold leading-5">
                   Good Source of Iron And Flesh Food
                 </p>
               </a>
-              <p className="mb-4 text-gray-700">
+              <p className="mb-4 text-white">
                 Sed ut perspiciatis unde omnis iste natus error sit sed quia
                 consequuntur magni voluptatem doloremque.
               </p>
@@ -138,7 +155,8 @@ const BlogSection = () => {
                 <a
                   href="/"
                   aria-label="Likes"
-                  className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group">
+                  className="flex items-start text-white transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+                >
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +167,8 @@ const BlogSection = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700">
+                      className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                    >
                       <polyline
                         points="6 23 1 23 1 12 6 12"
                         fill="none"
@@ -168,7 +187,8 @@ const BlogSection = () => {
                 <a
                   href="/"
                   aria-label="Comments"
-                  className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group">
+                  className="flex items-start text-white transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+                >
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -179,7 +199,8 @@ const BlogSection = () => {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       stroke="currentColor"
-                      className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700">
+                      className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                    >
                       <polyline
                         points="23 5 23 18 19 18 19 22 13 18 12 18"
                         fill="none"
@@ -198,7 +219,12 @@ const BlogSection = () => {
               </div>
             </div>
           </div>
-          <div className="overflow-hidden transition-shadow duration-300 bg-white  rounded-xl p-4">
+          <div
+            style={{
+              background: "#441f16",
+            }}
+            className="overflow-hidden transition-shadow duration-300  rounded-xl p-4"
+          >
             <a href="/" aria-label="Article">
               <img
                 src="https://themegenix.net/html/bemet/assets/img/blog/blog_post03.jpg"
@@ -207,18 +233,19 @@ const BlogSection = () => {
               />
             </a>
             <div className="py-5">
-              <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
+              <p className="mb-2 text-xs font-semibold text-white uppercase">
                 28 Dec 2020
               </p>
               <a
                 href="/"
                 aria-label="Article"
-                className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700">
+                className="inline-block mb-3 text-white transition-colors duration-200 hover:text-deep-purple-accent-700"
+              >
                 <p className="text-2xl font-bold leading-5">
                   Chicken Sausage For Sale Humanely Raised
                 </p>
               </a>
-              <p className="mb-4 text-gray-700">
+              <p className="mb-4 text-white">
                 Sed ut perspiciatis unde omnis iste natus error sit sed quia
                 consequuntur magni voluptatem doloremque.
               </p>
@@ -226,7 +253,8 @@ const BlogSection = () => {
                 <a
                   href="/"
                   aria-label="Likes"
-                  className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group">
+                  className="flex items-start text-whites transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+                >
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -237,7 +265,8 @@ const BlogSection = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700">
+                      className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                    >
                       <polyline
                         points="6 23 1 23 1 12 6 12"
                         fill="none"
@@ -256,7 +285,8 @@ const BlogSection = () => {
                 <a
                   href="/"
                   aria-label="Comments"
-                  className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group">
+                  className="flex items-start text-white transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+                >
                   <div className="mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -267,7 +297,8 @@ const BlogSection = () => {
                       strokeLinejoin="round"
                       strokeWidth="2"
                       stroke="currentColor"
-                      className="w-5 h-5 text-gray-600 transition-colors duration-200 group-hover:text-deep-purple-accent-700">
+                      className="w-5 h-5 text-white transition-colors duration-200 group-hover:text-deep-purple-accent-700"
+                    >
                       <polyline
                         points="23 5 23 18 19 18 19 22 13 18 12 18"
                         fill="none"

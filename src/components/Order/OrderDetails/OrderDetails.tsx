@@ -2,29 +2,33 @@
 
 import Spinner from "@/components/ui/Spinner/Spinner";
 import { useGetSingleUserQuery } from "@/redux/service/auth/authSlice";
-import { useGetUserOrderQuery, useUpdateOrderStatusMutation } from "@/redux/service/order/orderSlice";
+import {
+  useGetUserOrderQuery,
+  useUpdateOrderStatusMutation,
+} from "@/redux/service/order/orderSlice";
 import useUserInfo from "@/ulits/useUserInfoHook";
 
 const OrderDetails = ({ order }: { order: any }) => {
   console.log("order Id", order._id);
-  
+
   const { userInfo, loading, error } = useUserInfo();
   const { data, isLoading } = useGetSingleUserQuery(userInfo?.id);
-  const [UpdateOrderStatus,{isSuccess:OrderStatus}]=useUpdateOrderStatusMutation()
-  
-  const { data:OrderData, isLoading:orderLoading } = useGetUserOrderQuery(userInfo?.id);
-  console.log("order Data",data?.data);
-  
-  const handlemakeStutas=(id:string)=>{
+  const [UpdateOrderStatus, { isSuccess: OrderStatus }] =
+    useUpdateOrderStatusMutation();
 
-  }
-  
+  const { data: OrderData, isLoading: orderLoading } = useGetUserOrderQuery(
+    userInfo?.id
+  );
+  console.log("order Data", data?.data);
+
+  const handlemakeStutas = (id: string) => {};
+
   if (isLoading && loading) return <Spinner />;
   return (
     <>
       <div className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
         <div className="flex justify-start item-start space-y-2 flex-col ">
-          <h1 className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9  text-gray-800">
+          <h1 className="max-sm:text-xl lg:text-4xl font-semibold leading-7 lg:leading-9  text-gray-800">
             Order #{order?.paymentID}
           </h1>
           <p className="text-base font-medium leading-6 text-gray-600">
@@ -40,7 +44,8 @@ const OrderDetails = ({ order }: { order: any }) => {
               {order?.products.map((product: any) => (
                 <div
                   key={product?._id}
-                  className="mt-4 md:mt-6 flex  flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full ">
+                  className="mt-4 md:mt-6 flex  flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full "
+                >
                   <div className="pb-4 md:pb-8 w-full md:w-40">
                     <img
                       className="w-full hidden md:block"
@@ -115,18 +120,20 @@ const OrderDetails = ({ order }: { order: any }) => {
                         src="https://i.ibb.co/L8KSdNQ/image-3.png"
                       />
                     </div>
-                    {
-                      order?.paymentStatus=="pending"?<> <div className="flex flex-col justify-start items-center">
-                      <p className="text-xl text-green-400">
-                      Review
-                      </p>
-                    </div></>:<>
-                      <div className="flex flex-col justify-start items-center">
-                      <p className="text-xl text-green-400">
-                      Paid
-                      </p>
-                    </div></>
-                    }
+                    {order?.paymentStatus == "pending" ? (
+                      <>
+                        {" "}
+                        <div className="flex flex-col justify-start items-center">
+                          <p className="text-xl text-green-400">Review</p>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="flex flex-col justify-start items-center">
+                          <p className="text-xl text-green-400">Paid</p>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold leading-5 text-gray-800">
@@ -145,7 +152,6 @@ const OrderDetails = ({ order }: { order: any }) => {
                       <p className="text-xl text-red-600">
                         {order?.paymentStatus}
                       </p>
-                      
                     </div>
                   </div>
                 </div>
@@ -184,7 +190,8 @@ const OrderDetails = ({ order }: { order: any }) => {
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5Z"
                       stroke="#1F2937"

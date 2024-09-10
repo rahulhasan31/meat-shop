@@ -4,12 +4,9 @@ import { Slider } from "@nextui-org/react";
 import { Row, Col } from "antd";
 import { Checkbox } from "@nextui-org/react";
 import { Divider } from "@nextui-org/react";
-
-import Link from "next/link";
-
 import { useEffect, useState } from "react";
-import BlogDetail from "@/components/ui/blog/BlogDetails/BlogDetail";
 import ProductBanner from "@/components/ui/ProductBanner/ProductBanner";
+import BlogDetail from "@/components/ui/BlogDev/BlogDetails/BlogDetail";
 
 const BlogId = () => {
   const [isClient, setIsClient] = useState(false);

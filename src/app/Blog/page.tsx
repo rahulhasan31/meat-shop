@@ -1,6 +1,6 @@
-import React from "react";
+import OurBlog from "@/components/ui/BlogDev/OurBlog/OurBlog";
 import ProductBanner from "@/components/ui/ProductBanner/ProductBanner";
-import OurBlog from "@/components/ui/blog/OurBlog/OurBlog";
+import React from "react";
 
 const BlogPage = () => {
   return (

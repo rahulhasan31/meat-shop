@@ -10,8 +10,8 @@ import { FiPlusCircle } from "react-icons/fi";
 import { IoIosStar } from "react-icons/io";
 import Link from "next/link";
 import BlogSection from "@/components/BlogSection/BlogSection";
-
 import BlogDev from "../BlogDev";
+
 const OurBlog = () => {
   return (
     <>

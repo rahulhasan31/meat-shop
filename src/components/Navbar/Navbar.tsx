@@ -76,10 +76,11 @@ const NavbarPage = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link className="text-white" href="/blog">
-              BLOG
+            <Link className="text-white" color="foreground" href="/shop-blog">
+              ABOUT US
             </Link>
           </NavbarItem>
+
           <NavbarItem>
             <Link
               className="text-white"

@@ -77,7 +77,7 @@ const NavbarPage = () => {
           </NavbarItem>
           <NavbarItem>
             <Link className="text-white" color="foreground" href="/shop-blog">
-              ABOUT US
+              BLOG
             </Link>
           </NavbarItem>
 

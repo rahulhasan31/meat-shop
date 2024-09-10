@@ -1,7 +1,12 @@
+import ContacSection from "@/components/ui/ContactSection/ContacSection";
 import React from "react";
 
 const ContactPage = () => {
-  return <div className="h-screen">this ContactPage</div>;
+  return (
+    <div className="">
+      <ContacSection></ContacSection>
+    </div>
+  );
 };
 
 export default ContactPage;

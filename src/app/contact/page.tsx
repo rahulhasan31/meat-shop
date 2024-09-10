@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContactPage = () => {
-  return <div></div>;
+  return <div className="h-screen">this ContactPage</div>;
 };
 
 export default ContactPage;

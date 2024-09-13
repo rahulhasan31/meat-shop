@@ -6,20 +6,25 @@ import OrderStatus from "@/components/OrderStatus/OrderStatus";
 import Spinner from "@/components/ui/Spinner/Spinner";
 import useAuthCheck from "@/ulits/PriveteRoute";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const OrderConfirm = () => {
   const { isLoggedIn, logout, userRole } = useAuth();
   const router = useRouter();
-  if (!isLoggedIn) return <Spinner />;
+  const [isLoading, SetIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      SetIsLoading(false);
+    }, 2500);
+  });
+  if (isLoading) return <Spinner />;
   return (
     <>
-      {userRole === "admin" ? (
+      {isLoggedIn && userRole === "admin" ? (
         <OrderStatus />
       ) : (
-        <>
-          <Spinner /> && {router.push("/")}
-        </>
+        <>{router.push("/")}</>
       )}
     </>
   );

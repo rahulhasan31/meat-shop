@@ -2,21 +2,32 @@
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/authService/authContext";
 import Checkout from "@/components/Checkout/Checkout";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Spinner from "@/components/ui/Spinner/Spinner";
 
 const CheckoutPage = () => {
   const { isLoggedIn, logout, userRole } = useAuth();
   const router = useRouter();
-  if (!isLoggedIn) return <Spinner />;
+  // useEffect(() => {
+  //   if (!isLoggedIn) {
+  //     return <Spinner />;
+  //   }
+  // }, []);
+  const [isLoading, SetIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      SetIsLoading(false);
+    }, 2500);
+  });
+  if (isLoading) return <Spinner />;
   return (
     <>
-      {userRole === "user" || userRole === "admin" ? (
+      {(isLoggedIn && userRole === "user") ||
+      (isLoggedIn && userRole === "admin") ? (
         <Checkout />
       ) : (
-        <>
-          <Spinner /> && {router.push("/")}
-        </>
+        <>{router.push("/")}</>
       )}
     </>
   );

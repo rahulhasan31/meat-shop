@@ -115,7 +115,7 @@ const NavbarPage = () => {
             <>
               <NavbarItem>
                 <Button
-                  className="   bg-red-600 text-white px-3 py-1 rounded-full"
+                  className="max-sm:hidden   bg-red-600 text-white px-3 py-1 rounded-full"
                   color="success"
                   as={Link}
                   href="/dashboard"
@@ -128,7 +128,7 @@ const NavbarPage = () => {
                 <Button
                   onClick={logout}
                   as={Link}
-                  className=" bg-red-600 text-white rounded-full "
+                  className="max-sm:hidden bg-red-600 text-white rounded-full "
                   color="danger"
                   href="/"
                   variant="shadow"
@@ -193,7 +193,7 @@ const NavbarPage = () => {
             <NavbarItem>
               <Link
                 className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
-                href="/blog"
+                href="/shop-blog"
                 size="lg"
               >
                 <button className="text-center text-white text-2xl">
@@ -213,17 +213,61 @@ const NavbarPage = () => {
                 </button>
               </Link>
             </NavbarItem>
-            <NavbarItem>
-              <Link
-                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
-                href="/signup"
-                size="lg"
-              >
-                <button className="text-center text-white text-2xl">
-                  Sign Up
-                </button>
-              </Link>
-            </NavbarItem>
+
+            {isLoggedIn ? (
+              <>
+                <NavbarItem>
+                  <Link
+                    className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                    href="/dashboard"
+                    size="lg"
+                  >
+                    <button className="text-center text-white text-2xl">
+                      Dashbord
+                    </button>
+                  </Link>
+                </NavbarItem>
+                <NavbarItem>
+                  <Link
+                    className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                    href="/"
+                    size="lg"
+                  >
+                    <button
+                      onClick={logout}
+                      className="text-center text-white text-2xl"
+                    >
+                      Logout
+                    </button>
+                  </Link>
+                </NavbarItem>
+              </>
+            ) : (
+              <>
+                <NavbarItem>
+                  <Link
+                    className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                    href="/login"
+                    size="lg"
+                  >
+                    <button className="text-center text-white text-2xl">
+                      Login
+                    </button>
+                  </Link>
+                </NavbarItem>
+                <NavbarItem>
+                  <Link
+                    className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                    href="/signup"
+                    size="lg"
+                  >
+                    <button className="text-center text-white text-2xl">
+                      Sign Up
+                    </button>
+                  </Link>
+                </NavbarItem>
+              </>
+            )}
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>

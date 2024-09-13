@@ -42,8 +42,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const router = useRouter();
   const [userInfo, setUserInfo] = useState<any>(null);
   console.log("userInfo", userInfo);
-  // console.log("isLoggedIn", isLoggedIn);
-  // console.log("userInfo role", userInfo?.role);
 
   useEffect(() => {
     const fetchUserInfo = async () => {

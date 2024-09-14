@@ -302,7 +302,7 @@ const BlogSingle = () => {
           lg={6}
           className="  rounded-md  text-white lg:h-4/5"
         >
-          <section className="container ">
+          <section className=" ">
             <div className="lg:ml-5  p-5 mt-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">Search</h1>
               <Divider className="my-4  bg-white" />
@@ -318,91 +318,6 @@ const BlogSingle = () => {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="lg:ml-5 mt-10 p-5 max-sm:ms-10">
-              <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
-              <Divider className="my-4   bg-white" />
-              <div className="flex justify-between p-2">
-                <Checkbox color="danger" defaultSelected>
-                  <h1 className="lg:ms-3 font-semibold text-white">Mutton</h1>
-                </Checkbox>
-
-                <div>
-                  <h1 className="font-semibold">05</h1>
-                </div>
-              </div>
-              <div className="flex justify-between p-2">
-                <Checkbox color="danger" defaultSelected>
-                  <h1 className="lg:ms-3 font-semibold text-white">Beef</h1>
-                </Checkbox>
-
-                <div>
-                  <h1 className="font-semibold">20</h1>
-                </div>
-              </div>
-              <div className="flex justify-between p-2">
-                <Checkbox color="danger" defaultSelected>
-                  <h1 className="lg:ms-3 font-semibold text-white">Chicken</h1>
-                </Checkbox>
-
-                <div>
-                  <h1 className="font-semibold">10</h1>
-                </div>
-              </div>
-              <div></div>
-            </div>
-
-            <div className="lg:ml-5 mt-3  max-sm:ms-10">
-              <h1 className="text-2xl font-bold mb-4">Recent Post</h1>
-              <Divider className="my-4  bg-white" />
-              <div className="flex gap-5 mb-5">
-                <img
-                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img01.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h1 className="mt-2 font-bold text-md">
-                    Sources of protein elit
-                  </h1>
-                  <Divider className="my-4  bg-white" />
-                  <p className="font-bold ">January 30, 2023</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mb-5">
-                <img
-                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img02.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h1 className="mt-2 font-bold text-md">
-                    Different Types Meat
-                  </h1>
-                  <Divider className="my-4   bg-white" />
-                  <p className="font-bold">January 30, 2023</p>
-                </div>
-              </div>
-              <div className="flex gap-5 mb-5">
-                <img
-                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img03.jpg"
-                  alt=""
-                />
-                <div className="">
-                  <h1 className="mt-2 font-bold text-md">
-                    Eat meat and poultry
-                  </h1>
-                  <Divider className="my-4 s bg-white " />
-                  <p className="font-bold ">January 30, 2023</p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <Divider className="my-4  bg-white" />
-            </div>
-            <div>
-              <img
-                src="https://themegenix.net/html/bemet/assets/img/blog/add_banner.jpg"
-                className="p-3"
-              />
             </div>
           </section>
         </Col>

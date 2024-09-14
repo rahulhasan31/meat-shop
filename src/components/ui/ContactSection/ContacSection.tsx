@@ -1,14 +1,16 @@
 const ContacSection = () => {
   return (
-    <div>
-      <section className="bg-white dark:bg-gray-900">
+    <div
+      style={{
+        background: "#180905",
+      }}
+    >
+      <section className=" text-white">
         <div className="container px-6 py-12 mx-auto">
           <div>
-            <p className="font-medium text-blue-500 dark:text-blue-400">
-              Contact us
-            </p>
+            <p className="font-medium text-white ">Contact us</p>
 
-            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
+            <h1 className="mt-2 text-2xl font-semibold text-white md:text-3xl dark:text-white">
               Chat to our friendly team
             </h1>
 
@@ -21,7 +23,7 @@ const ContacSection = () => {
           <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
               <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-white rounded-full bg-red-500 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -38,19 +40,17 @@ const ContacSection = () => {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                <h2 className="mt-4 text-base font-medium text-white ">
                   Email
                 </h2>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-2 text-sm text-white">
                   Our friendly team is here to help.
                 </p>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-                  hello@merakiui.com
-                </p>
+                <p className="mt-2 text-sm text-red-500 ">hello@merakiui.com</p>
               </div>
 
               <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-white rounded-full bg-red-500 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -72,19 +72,17 @@ const ContacSection = () => {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                <h2 className="mt-4 text-base font-medium text-white">
                   Live chat
                 </h2>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-2 text-sm text-white">
                   Our friendly team is here to help.
                 </p>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-                  Start new chat
-                </p>
+                <p className="mt-2 text-sm text-red-500 ">Start new chat</p>
               </div>
 
               <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-white rounded-full bg-red-500 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -106,19 +104,19 @@ const ContacSection = () => {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+                <h2 className="mt-4 text-base font-medium text-white">
                   Office
                 </h2>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-2 text-sm text-white">
                   Come say hello at our office HQ.
                 </p>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
+                <p className="mt-2 text-sm text-red-500 dark:text-red-400">
                   100 Smith Street Collingwood VIC 3066 AU
                 </p>
               </div>
 
               <div>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <span className="inline-block p-3 text-white rounded-full bg-red-500 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -135,26 +133,30 @@ const ContacSection = () => {
                   </svg>
                 </span>
 
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                  Phone
-                </h2>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                <h2 className="mt-4 text-base font-medium text-white">Phone</h2>
+                <p className="mt-2 text-sm text-white ">
                   Mon-Fri from 8am to 5pm.
                 </p>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
+                <p className="mt-2 text-sm text-red-500 dark:text-red-400">
                   +1 (555) 000-0000
                 </p>
               </div>
             </div>
 
-            <div className="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+            <div
+              style={{
+                background: "#441f16",
+              }}
+              className="p-4 py-6 rounded-lg  md:p-8"
+            >
               <form>
                 <div className="-mx-2 md:items-center md:flex">
                   <div className="flex-1 px-2">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      First Name
-                    </label>
+                    <label className="block mb-2 text-sm ">First Name</label>
                     <input
+                      style={{
+                        background: "#441f16",
+                      }}
                       type="text"
                       placeholder="John "
                       className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -162,10 +164,11 @@ const ContacSection = () => {
                   </div>
 
                   <div className="flex-1 px-2 mt-4 md:mt-0">
-                    <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                      Last Name
-                    </label>
+                    <label className="block mb-2 text-sm ">Last Name</label>
                     <input
+                      style={{
+                        background: "#441f16",
+                      }}
                       type="text"
                       placeholder="Doe"
                       className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -174,10 +177,11 @@ const ContacSection = () => {
                 </div>
 
                 <div className="mt-4">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                    Email address
-                  </label>
+                  <label className="block mb-2 text-sm  ">Email address</label>
                   <input
+                    style={{
+                      background: "#441f16",
+                    }}
                     type="email"
                     placeholder="johndoe@example.com"
                     className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
@@ -185,16 +189,17 @@ const ContacSection = () => {
                 </div>
 
                 <div className="w-full mt-4">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                    Message
-                  </label>
+                  <label className="block mb-2 text-sm ">Message</label>
                   <textarea
+                    style={{
+                      background: "#441f16",
+                    }}
                     className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                     placeholder="Message"
                   ></textarea>
                 </div>
 
-                <button className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                <button className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-500 rounded-lg hover:bg-green-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-50">
                   Send message
                 </button>
               </form>

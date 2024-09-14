@@ -1,10 +1,14 @@
-import React from "react";
+import QualityBanner from "@/components/QualityBanner/QualityBanner";
+import ProductBanner from "@/components/ui/ProductBanner/ProductBanner";
+import Service from "@/components/ui/Service/Service";
 
 const ServicePage = () => {
   return (
-    <div className="h-screen">
-      <h1>this is Service Page</h1>
-    </div>
+    <>
+      <ProductBanner />
+      <QualityBanner />
+      <Service />
+    </>
   );
 };
 

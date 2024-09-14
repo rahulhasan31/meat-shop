@@ -10,6 +10,10 @@ import {
   NavbarMenuItem,
   Link,
   Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@nextui-org/react";
 
 import "./Navbar.css";
@@ -87,7 +91,7 @@ const NavbarPage = () => {
               color="foreground"
               href="/service-page"
             >
-              PAGES
+              SERVICE
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -210,6 +214,17 @@ const NavbarPage = () => {
               >
                 <button className="text-center text-white text-2xl">
                   About Us
+                </button>
+              </Link>
+            </NavbarItem>
+            <NavbarItem>
+              <Link
+                className="max-sm:mt-5 flex justify-center bg-red-600 py-3 rounded-3xl w-full"
+                href="/service-page"
+                size="lg"
+              >
+                <button className="text-center text-white text-2xl">
+                  Service
                 </button>
               </Link>
             </NavbarItem>

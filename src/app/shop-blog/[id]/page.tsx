@@ -14,10 +14,13 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaReplyAll } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
+import ProductBanner from "@/components/ui/ProductBanner/ProductBanner";
 
 const BlogSingle = () => {
   return (
     <>
+      <ProductBanner />
       <Row
         style={{
           background: "#180905",
@@ -90,7 +93,7 @@ const BlogSingle = () => {
             </div>
             <div className="lg:w-4/5 mx-auto lg:flex lg:mt-3 max-sm:mt-3">
               <img
-                className="lg:h-60"
+                className="lg:h-60 max-sm:w-full"
                 src="https://themegenix.net/html/bemet/assets/img/images/sd_img02.jpg"
               />
               <div>
@@ -232,6 +235,62 @@ const BlogSingle = () => {
                 </div>
               </div>
             </div>
+            <div className="lg:w-4/5 mx-auto lg:mt-10 text-white">
+              <h1 className="text-2xl font-semibold text-white">
+                Leave A Comment
+              </h1>
+              <Divider className="my-4 bg-white" />
+            </div>
+
+            <div className="lg:w-4/5 mx-auto lg:mt-10 text-white mb-5">
+              <div className="">
+                <form className="mt-6">
+                  <div className="w-full mt-6">
+                    <label className="block mb-2 text-sm text-white  ">
+                      Message
+                    </label>
+                    <textarea
+                      style={{
+                        backgroundColor: "#512319 ",
+                      }}
+                      className="block w-full h-32 px-5 py-3 mt-2 text-white placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                      placeholder="   white your comment here..."
+                    ></textarea>
+                  </div>
+                  <div className="flex-1">
+                    <label className="block mb-2 text-sm text-white dark:text-gray-200">
+                      Full Name
+                    </label>
+                    <input
+                      style={{
+                        backgroundColor: "#512319 ",
+                      }}
+                      type="text"
+                      placeholder="John Doe"
+                      className="block w-full px-5 py-7 mt-2 text-white placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                    />
+                  </div>
+
+                  <div className="flex-1 mt-6">
+                    <label className="block mb-2 text-sm text-white dark:text-gray-200">
+                      Email address
+                    </label>
+                    <input
+                      style={{
+                        backgroundColor: "#512319 ",
+                      }}
+                      type="email"
+                      placeholder="johndoe@example.com"
+                      className="block w-full px-5 py-3 mt-2 text-white placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                    />
+                  </div>
+
+                  <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-500 rounded-md hover:bg-green-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-50">
+                    Send Comment
+                  </button>
+                </form>
+              </div>
+            </div>
           </section>
         </Col>
 
@@ -241,26 +300,26 @@ const BlogSingle = () => {
           }}
           span={24}
           lg={6}
-          className=" lg:mt-14 rounded-md  text-white "
+          className="  rounded-md  text-white lg:h-4/5"
         >
           <section className="container ">
-            <div className="lg:ml-20  me-10 mt-5 max-sm:ms-10">
-              <h1 className="text-2xl font-bold mb-4">FILTER BY</h1>
+            <div className="lg:ml-5  me-10 mt-5 max-sm:ms-10">
+              <h1 className="text-2xl font-bold mb-4">Search</h1>
               <Divider className="my-4  bg-white" />
               <div>
-                <Slider
-                  color="danger"
-                  label="Price Range"
-                  step={50}
-                  minValue={0}
-                  maxValue={1000}
-                  defaultValue={[100, 500]}
-                  formatOptions={{ style: "currency", currency: "USD" }}
-                  className="max-w-md"
-                />
+                <div className="flex ">
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    className=" px-3 py-3  text-white rounded-s-lg "
+                  />
+                  <button className="bg-red-500 px-4 rounded-e-lg py-3">
+                    <FaSearch />
+                  </button>
+                </div>
               </div>
             </div>
-            <div className="lg:ml-20 mt-10 me-10 max-sm:ms-10">
+            <div className="lg:ml-5 mt-10 me-10 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
               <Divider className="my-4   bg-white" />
               <div className="flex justify-between p-2">
@@ -293,45 +352,57 @@ const BlogSingle = () => {
               <div></div>
             </div>
 
-            <div className="lg:ml-20 mt-3  max-sm:ms-10">
-              <h1 className="text-2xl font-bold mb-4">LATEST PRODUCTS</h1>
+            <div className="lg:ml-5 mt-3  max-sm:ms-10">
+              <h1 className="text-2xl font-bold mb-4">Recent Post</h1>
               <Divider className="my-4  bg-white" />
               <div className="flex gap-5 mb-5">
                 <img
-                  src="https://themegenix.net/html/bemet/assets/img/product/lp_img01.jpg"
+                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img01.jpg"
                   alt=""
                 />
-                <div className="ms-5">
-                  <h1 className="mt-2 font-bold text-md">ROAST CHICKEN</h1>
+                <div className="">
+                  <h1 className="mt-2 font-bold text-md">
+                    Sources of protein elit
+                  </h1>
                   <Divider className="my-4  bg-white" />
-                  <h1 className="font-bold text-lg">5$</h1>
+                  <p className="font-bold ">January 30, 2023</p>
                 </div>
               </div>
               <div className="flex gap-5 mb-5">
                 <img
-                  src="https://themegenix.net/html/bemet/assets/img/product/lp_img02.jpg"
+                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img02.jpg"
                   alt=""
                 />
-                <div className="ms-5">
-                  <h1 className="mt-2 font-bold text-md">VENISON MEAT</h1>
+                <div className="">
+                  <h1 className="mt-2 font-bold text-md">
+                    Different Types Meat
+                  </h1>
                   <Divider className="my-4   bg-white" />
-                  <h1 className="font-bold text-lg">5$</h1>
+                  <p className="font-bold">January 30, 2023</p>
                 </div>
               </div>
               <div className="flex gap-5 mb-5">
                 <img
-                  src="https://themegenix.net/html/bemet/assets/img/product/lp_img01.jpg"
+                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img03.jpg"
                   alt=""
                 />
-                <div className="ms-5">
-                  <h1 className="mt-2 font-bold text-md">ROAST CHICKEN</h1>
+                <div className="">
+                  <h1 className="mt-2 font-bold text-md">
+                    Eat meat and poultry
+                  </h1>
                   <Divider className="my-4 s bg-white " />
-                  <h1 className="font-bold text-lg">5$</h1>
+                  <p className="font-bold ">January 30, 2023</p>
                 </div>
               </div>
             </div>
             <div>
               <Divider className="my-4  bg-white" />
+            </div>
+            <div>
+              <img
+                src="https://themegenix.net/html/bemet/assets/img/blog/add_banner.jpg"
+                className="p-3"
+              />
             </div>
           </section>
         </Col>

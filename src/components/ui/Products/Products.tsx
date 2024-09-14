@@ -54,9 +54,9 @@ const Products = () => {
           className=" lg:mt-14 rounded-md  "
         >
           <section className="container ">
-            <div className="lg:ml-20  me-10 mt-5 max-sm:ms-10">
+            <div className="lg:ml-5  me-10 mt-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">FILTER BY</h1>
-              <Divider className="my-4" />
+              <Divider className="my-4 bg-white" />
               <div>
                 <Slider
                   color="danger"
@@ -70,9 +70,9 @@ const Products = () => {
                 />
               </div>
             </div>
-            <div className="lg:ml-20 mt-10 me-10 max-sm:ms-10">
+            <div className="lg:ml-5 mt-10 me-10 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
-              <Divider className="my-4" />
+              <Divider className="my-4 bg-white" />
               <div className="flex justify-between p-2">
                 <Checkbox color="danger" defaultSelected>
                   <h1 className="lg:ms-3 font-semibold text-white">Mutton</h1>
@@ -103,9 +103,9 @@ const Products = () => {
               <div></div>
             </div>
 
-            <div className="lg:ml-20 mt-3  max-sm:ms-10">
+            <div className="lg:ml-5 mt-3  max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">LATEST PRODUCTS</h1>
-              <Divider className="my-4" />
+              <Divider className="my-4 bg-white" />
               <div className="flex gap-5 mb-5">
                 <img
                   src="https://themegenix.net/html/bemet/assets/img/product/lp_img01.jpg"
@@ -124,7 +124,7 @@ const Products = () => {
                 />
                 <div className="ms-5">
                   <h1 className="mt-2 font-bold text-md">VENISON MEAT</h1>
-                  <Divider className="my-4 " />
+                  <Divider className="my-4 bg-white" />
                   <h1 className="font-bold text-lg">5$</h1>
                 </div>
               </div>
@@ -135,7 +135,7 @@ const Products = () => {
                 />
                 <div className="ms-5">
                   <h1 className="mt-2 font-bold text-md">ROAST CHICKEN</h1>
-                  <Divider className="my-4 " />
+                  <Divider className="my-4 bg-white" />
                   <h1 className="font-bold text-lg">5$</h1>
                 </div>
               </div>

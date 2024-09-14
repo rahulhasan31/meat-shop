@@ -319,6 +319,38 @@ const BlogSingle = () => {
                 </div>
               </div>
             </div>
+            <div className="lg:ml-5 mt-10 p-5 max-sm:ms-10">
+              <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
+              <Divider className="my-4   bg-white" />
+              <div className="flex justify-between p-2">
+                <Checkbox color="danger" defaultSelected>
+                  <h1 className="lg:ms-3 font-semibold text-white">Mutton</h1>
+                </Checkbox>
+
+                <div>
+                  <h1 className="font-semibold">05</h1>
+                </div>
+              </div>
+              <div className="flex justify-between p-2">
+                <Checkbox color="danger" defaultSelected>
+                  <h1 className="lg:ms-3 font-semibold text-white">Beef</h1>
+                </Checkbox>
+
+                <div>
+                  <h1 className="font-semibold">20</h1>
+                </div>
+              </div>
+              <div className="flex justify-between p-2">
+                <Checkbox color="danger" defaultSelected>
+                  <h1 className="lg:ms-3 font-semibold text-white">Chicken</h1>
+                </Checkbox>
+
+                <div>
+                  <h1 className="font-semibold">10</h1>
+                </div>
+              </div>
+              <div></div>
+            </div>
           </section>
         </Col>
       </Row>

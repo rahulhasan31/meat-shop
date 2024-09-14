@@ -351,6 +351,50 @@ const BlogSingle = () => {
               </div>
               <div></div>
             </div>
+
+            <div className="lg:ml-5 mt-3  max-sm:ms-10">
+              <h1 className="text-2xl font-bold mb-4">Recent Post</h1>
+              <Divider className="my-4  bg-white" />
+              <div className="flex gap-5 mb-5">
+                <img
+                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img01.jpg"
+                  alt=""
+                />
+                <div className="">
+                  <h1 className="mt-2 font-bold text-md">
+                    Sources of protein elit
+                  </h1>
+                  <Divider className="my-4  bg-white" />
+                  <p className="font-bold ">January 30, 2023</p>
+                </div>
+              </div>
+              <div className="flex gap-5 mb-5">
+                <img
+                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img02.jpg"
+                  alt=""
+                />
+                <div className="">
+                  <h1 className="mt-2 font-bold text-md">
+                    Different Types Meat
+                  </h1>
+                  <Divider className="my-4   bg-white" />
+                  <p className="font-bold">January 30, 2023</p>
+                </div>
+              </div>
+              <div className="flex gap-5 mb-5">
+                <img
+                  src="https://themegenix.net/html/bemet/assets/img/blog/rc_post_img03.jpg"
+                  alt=""
+                />
+                <div className="">
+                  <h1 className="mt-2 font-bold text-md">
+                    Eat meat and poultry
+                  </h1>
+                  <Divider className="my-4 s bg-white " />
+                  <p className="font-bold ">January 30, 2023</p>
+                </div>
+              </div>
+            </div>
           </section>
         </Col>
       </Row>

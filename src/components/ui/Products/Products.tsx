@@ -54,7 +54,7 @@ const Products = () => {
           className=" lg:mt-14 rounded-md  "
         >
           <section className="container ">
-            <div className="lg:ml-5  me-10 mt-5 max-sm:ms-10">
+            <div className="lg:ml-5 p-10  mt-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">FILTER BY</h1>
               <Divider className="my-4 bg-white" />
               <div>
@@ -70,7 +70,7 @@ const Products = () => {
                 />
               </div>
             </div>
-            <div className="lg:ml-5 mt-10 me-10 max-sm:ms-10">
+            <div className="lg:ml-5 mt-10 p-10 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
               <Divider className="my-4 bg-white" />
               <div className="flex justify-between p-2">
@@ -103,7 +103,7 @@ const Products = () => {
               <div></div>
             </div>
 
-            <div className="lg:ml-5 mt-3  max-sm:ms-10">
+            <div className="lg:ml-5 mt-3 p-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">LATEST PRODUCTS</h1>
               <Divider className="my-4 bg-white" />
               <div className="flex gap-5 mb-5">

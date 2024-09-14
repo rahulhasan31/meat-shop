@@ -59,7 +59,7 @@ const Review = () => {
     if (isError && isError.status === 401) {
       refreshTokenMake().then((decoded) => {
         if (decoded) {
-          console.log("Token refreshed and decoded:", decoded);
+          // console.log("Token refreshed and decoded:", decoded);
           // Handle the successful refresh, e.g., update user state
         } else {
           console.error("Failed to refresh token");
@@ -116,7 +116,7 @@ const Review = () => {
     event.preventDefault();
     const form = event.target;
     const review = form.review.value;
-    console.log({ id: isId, review: review });
+    // console.log({ id: isId, review: review });
 
     const reviewData = {
       id: isId,

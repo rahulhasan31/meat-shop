@@ -303,7 +303,7 @@ const BlogSingle = () => {
           className="  rounded-md  text-white lg:h-4/5"
         >
           <section className="container ">
-            <div className="lg:ml-5  me-10 mt-5 max-sm:ms-10">
+            <div className="lg:ml-5  p-5 mt-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">Search</h1>
               <Divider className="my-4  bg-white" />
               <div>
@@ -319,7 +319,7 @@ const BlogSingle = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:ml-5 mt-10 me-10 max-sm:ms-10">
+            <div className="lg:ml-5 mt-10 p-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
               <Divider className="my-4   bg-white" />
               <div className="flex justify-between p-2">

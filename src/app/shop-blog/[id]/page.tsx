@@ -395,6 +395,15 @@ const BlogSingle = () => {
                 </div>
               </div>
             </div>
+            <div>
+              <Divider className="my-4  bg-white" />
+            </div>
+            <div>
+              <img
+                src="https://themegenix.net/html/bemet/assets/img/blog/add_banner.jpg"
+                className="p-3"
+              />
+            </div>
           </section>
         </Col>
       </Row>

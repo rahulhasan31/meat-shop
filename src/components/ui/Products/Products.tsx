@@ -53,7 +53,7 @@ const Products = () => {
           lg={6}
           className=" lg:mt-14 rounded-md  "
         >
-          <section className="container ">
+          <section className=" ">
             <div className="lg:ml-5 p-10  mt-5 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">FILTER BY</h1>
               <Divider className="my-4 bg-white" />
@@ -70,6 +70,7 @@ const Products = () => {
                 />
               </div>
             </div>
+
             <div className="lg:ml-5 mt-10 p-10 max-sm:ms-10">
               <h1 className="text-2xl font-bold mb-4">CATEGORY</h1>
               <Divider className="my-4 bg-white" />

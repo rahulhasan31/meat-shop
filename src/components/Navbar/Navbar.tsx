@@ -50,12 +50,9 @@ const NavbarPage = () => {
             className="sm:hidden text-white"
           />
           <NavbarBrand>
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <img
-                src="/logo.png"
-                alt="Logo"
-                className="h-8 w-28 md:h-10 md:w-56"
-              />
+            <div className="flex items-center ">
+              <img src="/ac.png" alt="Logo" className="h-20 w-44 lg:ms-6" />
+              {/* <h1 className="text-white">Meat Shop</h1> */}
             </div>
           </NavbarBrand>
         </NavbarContent>

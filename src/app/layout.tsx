@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Providers } from "./providers";
 import NavbarPage from "../components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -30,6 +31,7 @@ export default function RootLayout({
                 <Providers>
                   <NavbarPage></NavbarPage>
                   {children}
+                  <SpeedInsights />
                   <Footer />
                 </Providers>
               </ProvidersAntdRegistry>

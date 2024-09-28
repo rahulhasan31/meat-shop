@@ -8,7 +8,7 @@ import { Button } from "@nextui-org/react";
 import { FaPlus } from "react-icons/fa6";
 import { useGetAllProductQuery } from "@/redux/service/productSlice/productSlice";
 import { IProducts } from "../../../app/types/ProductType";
-
+import Image from "next/image";
 import Spinner from "../Spinner/Spinner";
 import ProductCard from "./ProductCard/ProductCard";
 const Products = () => {
@@ -108,7 +108,9 @@ const Products = () => {
               <h1 className="text-2xl font-bold mb-4">LATEST PRODUCTS</h1>
               <Divider className="my-4 bg-white" />
               <div className="flex gap-5 mb-5">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="https://themegenix.net/html/bemet/assets/img/product/lp_img01.jpg"
                   alt=""
                 />
@@ -119,7 +121,9 @@ const Products = () => {
                 </div>
               </div>
               <div className="flex gap-5 mb-5">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="https://themegenix.net/html/bemet/assets/img/product/lp_img02.jpg"
                   alt=""
                 />
@@ -130,7 +134,9 @@ const Products = () => {
                 </div>
               </div>
               <div className="flex gap-5 mb-5">
-                <img
+                <Image
+                  width={100}
+                  height={100}
                   src="https://themegenix.net/html/bemet/assets/img/product/lp_img01.jpg"
                   alt=""
                 />

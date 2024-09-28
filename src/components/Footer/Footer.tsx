@@ -378,7 +378,7 @@ const Footer = () => {
                   <Image
                     width={500}
                     height={500}
-                    src="	https://themegenix.net/html/bemet/assets/img/images/footer_insta06.jpg"
+                    src="https://themegenix.net/html/bemet/assets/img/images/footer_insta06.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
                   />

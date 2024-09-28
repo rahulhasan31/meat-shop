@@ -1,5 +1,6 @@
 import React from "react";
 import "./Quality.css";
+import Image from "next/image";
 const QualityBanner = () => {
   return (
     <>
@@ -26,7 +27,9 @@ const QualityBanner = () => {
               style={{ backgroundColor: "#3a1c15" }}
               className="w-20 h-20 md:w-40 md:h-40 hover:bg-red-600 rounded-full flex items-center justify-center "
             >
-              <img
+              <Image
+                width={500}
+                height={500}
                 src="/cat_icon01.png"
                 alt="Duck Meat"
                 className="w-12 h-12 md:w-24 md:h-24"
@@ -41,7 +44,9 @@ const QualityBanner = () => {
               style={{ backgroundColor: "#3a1c15" }}
               className="w-20 h-20 md:w-40 md:h-40 hover:bg-red-600 rounded-full flex items-center justify-center "
             >
-              <img
+              <Image
+                width={500}
+                height={500}
                 src="/cat_icon02.png"
                 alt="Duck Meat"
                 className="w-12 h-12 md:w-24 md:h-24"
@@ -56,8 +61,10 @@ const QualityBanner = () => {
               style={{ backgroundColor: "#3a1c15" }}
               className="w-20 h-20 md:w-40 md:h-40 hover:bg-red-600 rounded-full flex items-center justify-center "
             >
-              <img
-                src="cat_icon03.png"
+              <Image
+                width={500}
+                height={500}
+                src="/cat_icon03.png"
                 alt="Duck Meat"
                 className="w-12 h-12 md:w-24 md:h-24"
               />
@@ -71,8 +78,10 @@ const QualityBanner = () => {
               style={{ backgroundColor: "#3a1c15" }}
               className="w-20 h-20 md:w-40 md:h-40 hover:bg-red-600 rounded-full flex items-center justify-center "
             >
-              <img
-                src="cat_icon04.png"
+              <Image
+                width={500}
+                height={500}
+                src="/cat_icon04.png"
                 alt="Duck Meat"
                 className="w-12 h-12 md:w-24 md:h-24"
               />

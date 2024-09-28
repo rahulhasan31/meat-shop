@@ -4,7 +4,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "./style.css";
-
+import Image from "next/image";
 const TowSlider = () => {
   return (
     <>
@@ -30,18 +30,19 @@ const TowSlider = () => {
             spaceBetween: 10,
           },
         }}
-        className="custom-swiper">
+        className="custom-swiper"
+      >
         <SwiperSlide>
-          <img src="/gallery_img03.png" alt="" />
+          <Image width={500} height={500} src="/gallery_img03.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/bg-img.png" alt="" />
+          <Image width={500} height={500} src="/bg-img.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/product_img02.png" alt="" />
+          <Image width={500} height={500} src="/product_img02.png" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/gallery_img03.png" alt="" />
+          <Image width={500} height={500} src="/gallery_img03.png" alt="" />
         </SwiperSlide>
       </Swiper>
     </>

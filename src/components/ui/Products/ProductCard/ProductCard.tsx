@@ -10,7 +10,7 @@ import { IProducts } from "@/app/types/ProductType";
 import { addToCart } from "@/redux/features/cart/cartSlice";
 import Swal from "sweetalert2";
 import "./ProductCard.css";
-
+import Image from "next/image";
 interface IProps {
   product: IProducts;
 }
@@ -31,7 +31,9 @@ const ProductCard = ({ product }: { product: any }) => {
     <div className="relative">
       <Link href={`/products/${product._id}`}>
         <div className="absolute inset-x-0 top-7 flex justify-center z-10 max-sm:top-2 max-sm:">
-          <img
+          <Image
+            width={500}
+            height={100}
             src={product?.imgUrl}
             alt="Hamburg Meat"
             className="object-cover lg:h-44 max-sm:h-48 max-sm:p-3"

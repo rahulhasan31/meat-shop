@@ -5,13 +5,16 @@ import {
   useParallax,
 } from "react-scroll-parallax";
 import "./Parallax.css";
+import Image from "next/image";
 const ParallaxSection = () => {
   return (
     <section className="p-bg">
       <div className="quote-section">
         <div className="overlay">
           <div className="content">
-            <img
+            <Image
+              width={100}
+              height={100}
               className="text-center  mx-auto"
               src="https://i.ibb.co/3Ys6LLQ/cta-icon.png"
               alt=""

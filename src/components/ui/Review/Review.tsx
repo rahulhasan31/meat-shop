@@ -34,7 +34,7 @@ import Cookies from "js-cookie";
 import { setCookiesToken, setToLocalStored } from "@/ulits/local-sotorage";
 import { decodedToken } from "@/ulits/jwt";
 import useRefreshToken from "@/ulits/useRefreshToken";
-
+import Image from "next/image";
 const Review = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [deleteReview, { error: deleteErr, isSuccess: deleteSucces }] =
@@ -271,7 +271,9 @@ ease-in-out"
 
                         <div className="relative shrink-0 ">
                           <div className="flex items-center">
-                            <img
+                            <Image
+                              width={500}
+                              height={500}
                               src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
                               alt="Timothy Quano"
                               className="rounded-full w-16 h-16 object-cover 2xl:w-28 2xl:h-28"

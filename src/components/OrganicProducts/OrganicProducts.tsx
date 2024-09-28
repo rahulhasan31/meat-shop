@@ -2,6 +2,7 @@ import React from "react";
 import "./OrganicProducts.css";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import Image from "next/image";
 const OrganicProducts = () => {
   return (
     <section
@@ -17,7 +18,9 @@ const OrganicProducts = () => {
         <h1 className="text-center our  text-4xl font-bold">
           Our Organic Products
         </h1>
-        <img
+        <Image
+          width={500}
+          height={500}
           className="w-32 text-center mx-auto lg:relative lg:-top-10 max-sm:relative max-sm:-top-8"
           src="/why1.png"
           alt=""
@@ -30,7 +33,9 @@ const OrganicProducts = () => {
           }}
           className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto"
         >
-          <img
+          <Image
+            width={500}
+            height={500}
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
             src="/organic_product01.png"
             alt=""
@@ -57,7 +62,9 @@ const OrganicProducts = () => {
           }}
           className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto"
         >
-          <img
+          <Image
+            width={500}
+            height={500}
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
             src="/product03.png"
             alt=""
@@ -84,7 +91,9 @@ const OrganicProducts = () => {
           }}
           className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto"
         >
-          <img
+          <Image
+            width={500}
+            height={500}
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
             src="/organic_product03.png"
             alt=""
@@ -111,7 +120,9 @@ const OrganicProducts = () => {
           }}
           className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-2xl p-4 md:p-6 h-auto"
         >
-          <img
+          <Image
+            width={500}
+            height={500}
             className="w-24 sm:w-32 md:w-44 mb-4 sm:mb-0"
             src="/inner_product03.png"
             alt=""

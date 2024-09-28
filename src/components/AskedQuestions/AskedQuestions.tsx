@@ -1,5 +1,6 @@
 "use client";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import Image from "next/image";
 const AskedQuestions = () => {
   const defaultContent =
     "Meat provide well shaped fresh and the organic meat well animals is Humans have hunted schistoric times";
@@ -16,7 +17,9 @@ const AskedQuestions = () => {
           <div className="w-full relative pb-10 px-6 xl:px-0">
             <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
               <div className="w-full lg:w-7/12 h-full lg:pr-10 xl:pr-0">
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   role="img"
                   aria-label="people smiling"
                   className="mx-auto"

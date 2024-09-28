@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import "./Banner.css";
-
+import Image from "next/image";
 const Banner = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -17,7 +17,7 @@ const Banner = () => {
     //   <SwiperSlide>
     //     <div className="banner-slide">
     //       <div className="banner-overlay"></div>
-    //       <img className="" src="/branner.png" alt="Fresh Meat Banner" />
+    //       <Image className="" src="/branner.png" alt="Fresh Meat Banner" />
     //       <div className="banner-text">
     //         <h1 className="font-serif ">Fresh Meat</h1>
     //         <p className="text-red-600 font-bold text-2xl font-serif">
@@ -77,7 +77,9 @@ const Banner = () => {
           </div>
 
           <div className="flex items-center justify-center w-full h-96 lg:w-1/2">
-            <img
+            <Image
+              width={500}
+              height={500}
               className="object-cover lg:w-full lg:h-full  lg:max-w-2xl lg:rounded-full"
               src="/bg.png"
               alt="apple watch photo"

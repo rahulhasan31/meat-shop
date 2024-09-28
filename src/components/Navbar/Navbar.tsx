@@ -23,7 +23,7 @@ import { useEffect } from "react";
 import { isLoggedIn } from "@/authService/authservice";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/authService/authContext";
-
+import Image from "next/image";
 const NavbarPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [clientProductsCount, setClientProductsCount] = useState(0);
@@ -50,8 +50,14 @@ const NavbarPage = () => {
             className="sm:hidden text-white"
           />
           <NavbarBrand>
-            <div className="flex items-center ">
-              <img src="/ac.png" alt="Logo" className="h-20 w-44 lg:ms-6" />
+            <div className="flex  ">
+              <Image
+                width={100}
+                height={100}
+                src="/ac.png"
+                alt="Logo"
+                className="h-20 w-20 lg:ms-20 max-sm:ms-10"
+              />
               {/* <h1 className="text-white">Meat Shop</h1> */}
             </div>
           </NavbarBrand>

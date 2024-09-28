@@ -1,5 +1,6 @@
 import React from "react";
 import "./OurOrganic.css";
+import Image from "next/image";
 const OurOrganic = () => {
   return (
     <section
@@ -15,7 +16,9 @@ const OurOrganic = () => {
         <h1 className="text-center our  text-4xl font-bold">
           Our Organic Products
         </h1>
-        <img
+        <Image
+          width={500}
+          height={500}
           className="w-32 text-center mx-auto lg:relative lg:-top-10 max-sm:relative max-sm:-top-8"
           src="/why1.png"
           alt=""
@@ -24,7 +27,9 @@ const OurOrganic = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-6  ">
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
-            <img
+            <Image
+              width={500}
+              height={500}
               src="/product_img03.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "
@@ -47,7 +52,9 @@ const OurOrganic = () => {
         </div>
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
-            <img
+            <Image
+              width={500}
+              height={500}
               src="/inner_product04.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "
@@ -70,7 +77,9 @@ const OurOrganic = () => {
         </div>
         <div className="relative">
           <div className="absolute inset-x-0 top-0 flex justify-center lg:-mt-16  z-10">
-            <img
+            <Image
+              width={500}
+              height={500}
               src="/product03.png"
               alt="Hamburg Meat"
               className="object-cover lg:w-ful lg:h-80 "

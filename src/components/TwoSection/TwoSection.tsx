@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 const TwoSection = () => {
   return (
     <>
@@ -13,7 +13,9 @@ const TwoSection = () => {
           <div className=" rounded-lg shadow-md overflow-hidden p-4 md:p-6 flex flex-col md:flex-row items-center">
             <div className="relative flex-shrink-0">
               <div className="">
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   src="/product05.png"
                   alt="Sunday Limited Offer"
                   className="w-72 h-72 md:w-72 md:h-72  "
@@ -37,7 +39,9 @@ const TwoSection = () => {
           <div className="text-white rounded-lg shadow-md overflow-hidden p-4 md:p-6 flex flex-col md:flex-row items-center">
             <div className="relative flex-shrink-0">
               <div className="">
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   src="/product03.png"
                   alt="Flash Sale Limited Offer"
                   className="w-72 h-72 md:w-72 md:h-72  transform translate-x-2 translate-y-2 md:translate-x-3 md:translate-y-3 "

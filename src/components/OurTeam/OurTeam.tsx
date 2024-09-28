@@ -3,7 +3,7 @@ import "./OurTeam.css";
 import { AiOutlineSmallDash } from "@react-icons/all-files/ai/AiOutlineSmallDash";
 import { RiTeamLine } from "react-icons/ri";
 import { FaPlus } from "react-icons/fa";
-
+import Image from "next/image";
 const OurTeam = () => {
   return (
     <section className="bg ">
@@ -20,7 +20,9 @@ const OurTeam = () => {
         </div>
         <div className="right-section lg:relative  gap-5 lg:w-full lg:left-24">
           <div className="team-card ">
-            <img
+            <Image
+              width={500}
+              height={500}
               className="w-full"
               src="https://themegenix.net/html/bemet/assets/img/team/team_img01.jpg"
               alt="Alaxzender Pilot"
@@ -35,7 +37,9 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="team-card ">
-            <img
+            <Image
+              width={500}
+              height={500}
               className="w-full"
               src="https://themegenix.net/html/bemet/assets/img/team/team_img02.jpg"
               alt="Starlee Jonson"
@@ -49,7 +53,9 @@ const OurTeam = () => {
             </div>
           </div>
           <div className="team-card ">
-            <img
+            <Image
+              width={500}
+              height={500}
               className="w-full"
               src="https://themegenix.net/html/bemet/assets/img/team/team_img03.jpg"
               alt="Alaxzender Pilot"

@@ -15,6 +15,7 @@ import { useAppDispatch } from "@/redux/lib/hooks";
 import { addToCart } from "@/redux/features/cart/cartSlice";
 import Swal from "sweetalert2";
 import { IProducts } from "@/app/types/ProductType";
+
 interface CountdownTime {
   days: string;
   hours: string;
@@ -148,7 +149,9 @@ const SinglePage = ({ params }: any) => {
           <Col xs={24} sm={24} md={12} lg={12}>
             <div className="  lg:ps-4 lg:pe-4  max-sm:p-4">
               <div className="image-container">
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   src={mainImage}
                   alt="Main"
                   className="main-image rounded-2xl shadow-sm"
@@ -156,7 +159,9 @@ const SinglePage = ({ params }: any) => {
               </div>
               <div className="thumbnail-container">
                 {thumbnails.map((thumb, index) => (
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     key={index}
                     src={thumb}
                     alt={`Thumbnail ${index + 1}`}

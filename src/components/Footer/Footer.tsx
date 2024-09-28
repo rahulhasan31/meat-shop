@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Footer = () => {
@@ -13,7 +14,9 @@ const Footer = () => {
           <div className="text-white py-14 grid grid-cols-1 lg:grid-cols-3 gap-y-8 max-w-sm mx-auto sm:max-w-lg md:max-w-3xl lg:max-w-full lg:gap-x-12">
             <div className="text-white w-full lg:max-w-xs mb-10  lg:mb-0 col-span-full lg:col-span-1">
               <a className="flex  justify-center lg:justify-start ">
-                <img
+                <Image
+                  width={200}
+                  height={500}
                   className="text-white  rounded-xl p-3"
                   src="/ac.png"
                   alt=""
@@ -336,42 +339,54 @@ const Footer = () => {
               </div>
               <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto ">
                 <div className="block">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="https://themegenix.net/html/bemet/assets/img/images/footer_insta01.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
                   />
                 </div>
                 <div className="block">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="https://themegenix.net/html/bemet/assets/img/images/footer_insta02.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
                   />
                 </div>
                 <div className="block">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="https://themegenix.net/html/bemet/assets/img/images/footer_insta03.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
                   />
                 </div>
                 <div className="block">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="https://themegenix.net/html/bemet/assets/img/images/footer_insta05.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
                   />
                 </div>
                 <div className="block">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="	https://themegenix.net/html/bemet/assets/img/images/footer_insta06.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
                   />
                 </div>
                 <div className="block">
-                  <img
+                  <Image
+                    width={500}
+                    height={500}
                     src="https://themegenix.net/html/bemet/assets/img/images/footer_insta07.jpg"
                     alt="Footer tailwind section"
                     className="max-lg:w-full"
